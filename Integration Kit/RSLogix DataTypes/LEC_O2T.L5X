@@ -1,0 +1,119 @@
+﻿<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<RSLogix5000Content SchemaRevision="1.0" SoftwareRevision="20.01" TargetName="LEC_O2T" TargetType="DataType" ContainsContext="true" Owner="Mecco, Mecco Marking &amp; Traceability" ExportDate="Sat Dec 14 12:27:01 2013" ExportOptions="DecoratedData Context Dependencies ForceProtectedEncoding AllProjDocTrans">
+<Controller Use="Context" Name="EIP_Test2">
+<DataTypes Use="Context">
+<DataType Use="Target" Name="LEC_O2T" Family="NoFamily" Class="User">
+<Members>
+<Member Name="X_Offset_mm_x100" DataType="INT" Dimension="0" Radix="Decimal" Hidden="false" ExternalAccess="Read/Write">
+<Description>
+<![CDATA[X axis offset in units of [millimeters times 100]]]>
+</Description>
+</Member>
+<Member Name="Y_Offset_mm_x100" DataType="INT" Dimension="0" Radix="Decimal" Hidden="false" ExternalAccess="Read/Write">
+<Description>
+<![CDATA[Y axis offset in units of [millimeters times 100]]]>
+</Description>
+</Member>
+<Member Name="Rotation_deg_x10" DataType="INT" Dimension="0" Radix="Decimal" Hidden="false" ExternalAccess="Read/Write">
+<Description>
+<![CDATA[Rotation in units of [degrees times 10]]]>
+</Description>
+</Member>
+<Member Name="X_Rotation_Center_mm_x100" DataType="INT" Dimension="0" Radix="Decimal" Hidden="false" ExternalAccess="Read/Write">
+<Description>
+<![CDATA[X coordinate of the center of rotation in units of [millimeters times 100]]]>
+</Description>
+</Member>
+<Member Name="Y_Rotation_Center_mm_x100" DataType="INT" Dimension="0" Radix="Decimal" Hidden="false" ExternalAccess="Read/Write">
+<Description>
+<![CDATA[Y coordinate of the center of rotation in units of [millimeters times 100]]]>
+</Description>
+</Member>
+<Member Name="X_Scale_x1000" DataType="INT" Dimension="0" Radix="Decimal" Hidden="false" ExternalAccess="Read/Write">
+<Description>
+<![CDATA[X scale factor in units of [scale times 1000].  For example, use 1000 for a scale of 1]]>
+</Description>
+</Member>
+<Member Name="Y_Scale_x1000" DataType="INT" Dimension="0" Radix="Decimal" Hidden="false" ExternalAccess="Read/Write">
+<Description>
+<![CDATA[Y scale factor in units of [scale times 1000].  For example, use 1000 for a scale of 1]]>
+</Description>
+</Member>
+<Member Name="Reserved" DataType="INT" Dimension="0" Radix="Decimal" Hidden="false" ExternalAccess="Read/Write">
+<Description>
+<![CDATA[Reserved]]>
+</Description>
+</Member>
+<Member Name="Marker_Command" DataType="INT" Dimension="0" Radix="Decimal" Hidden="false" ExternalAccess="Read/Write">
+<Description>
+<![CDATA[Numeric command from PLC to marker]]>
+</Description>
+</Member>
+<Member Name="Computed_Job_Field_Index" DataType="INT" Dimension="0" Radix="Decimal" Hidden="false" ExternalAccess="Read/Write">
+<Description>
+<![CDATA[The field index number for the computed field]]>
+</Description>
+</Member>
+<Member Name="Mark_Timeout_Sec" DataType="INT" Dimension="0" Radix="Decimal" Hidden="false" ExternalAccess="Read/Write">
+<Description>
+<![CDATA[The maximum time to allow for marking [seconds].  An error is generated if this time is exceeded.]]>
+</Description>
+</Member>
+<Member Name="Reserved_1" DataType="INT" Dimension="0" Radix="Decimal" Hidden="false" ExternalAccess="Read/Write">
+<Description>
+<![CDATA[Reserved]]>
+</Description>
+</Member>
+<Member Name="Barcode_Pass_Grade" DataType="INT" Dimension="0" Radix="Decimal" Hidden="false" ExternalAccess="Read/Write">
+<Description>
+<![CDATA[Pass grade for barcode verification]]>
+</Description>
+</Member>
+<Member Name="Max_Remarks" DataType="INT" Dimension="0" Radix="Decimal" Hidden="false" ExternalAccess="Read/Write">
+<Description>
+<![CDATA[Maximum number of remark attempts if camera verification fails]]>
+</Description>
+</Member>
+<Member Name="Short_Job_Field" DataType="Job_Field" Dimension="5" Radix="NullType" Hidden="false" ExternalAccess="Read/Write">
+<Description>
+<![CDATA[The field index numbers of up to five 32-character string fields]]>
+</Description>
+</Member>
+<Member Name="Long_Job_Field" DataType="Job_Field" Dimension="0" Radix="NullType" Hidden="false" ExternalAccess="Read/Write">
+<Description>
+<![CDATA[The field index numbers of a single 64-character string field]]>
+</Description>
+</Member>
+<Member Name="Marker_Job_File_Name" DataType="String32" Dimension="0" Radix="NullType" Hidden="false" ExternalAccess="Read/Write">
+<Description>
+<![CDATA[The name of the marker job file to load]]>
+</Description>
+</Member>
+<Member Name="Camera_Job_File_Name" DataType="String32" Dimension="0" Radix="NullType" Hidden="false" ExternalAccess="Read/Write">
+<Description>
+<![CDATA[The name of the camera job file to load]]>
+</Description>
+</Member>
+<Member Name="Short_Field_String" DataType="String32" Dimension="5" Radix="NullType" Hidden="false" ExternalAccess="Read/Write">
+<Description>
+<![CDATA[Short string field values [32-characters]]]>
+</Description>
+</Member>
+<Member Name="Long_Field_String" DataType="String128" Dimension="0" Radix="NullType" Hidden="false" ExternalAccess="Read/Write">
+<Description>
+<![CDATA[Long string field value [128-characters]]]>
+</Description>
+</Member>
+</Members>
+<Dependencies>
+<Dependency Type="DataType" Name="Job_Field"/>
+<Dependency Type="DataType" Name="Job_Field"/>
+<Dependency Type="DataType" Name="String32"/>
+<Dependency Type="DataType" Name="String32"/>
+<Dependency Type="DataType" Name="String32"/>
+<Dependency Type="DataType" Name="String128"/>
+</Dependencies>
+</DataType>
+</DataTypes>
+</Controller>
+</RSLogix5000Content>

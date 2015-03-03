@@ -1,0 +1,739 @@
+﻿<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<RSLogix5000Content SchemaRevision="1.0" SoftwareRevision="20.01" TargetName="MainRoutine" TargetType="Routine" TargetSubType="RLL" ContainsContext="true" Owner="Mecco, Mecco Marking &amp; Traceability" ExportDate="Sat Dec 14 12:26:34 2013" ExportOptions="References DecoratedData Context Dependencies ForceProtectedEncoding AllProjDocTrans">
+<Controller Use="Context" Name="EIP_Test2">
+<DataTypes Use="Context">
+<DataType Name="String128" Family="StringFamily" Class="User">
+<Members>
+<Member Name="LEN" DataType="DINT" Dimension="0" Radix="Decimal" Hidden="false" ExternalAccess="Read/Write"/>
+<Member Name="DATA" DataType="SINT" Dimension="128" Radix="ASCII" Hidden="false" ExternalAccess="Read/Write"/>
+</Members>
+</DataType>
+<DataType Name="String64" Family="StringFamily" Class="User">
+<Members>
+<Member Name="LEN" DataType="DINT" Dimension="0" Radix="Decimal" Hidden="false" ExternalAccess="Read/Write"/>
+<Member Name="DATA" DataType="SINT" Dimension="64" Radix="ASCII" Hidden="false" ExternalAccess="Read/Write"/>
+</Members>
+</DataType>
+<DataType Name="LEC_O2T" Family="NoFamily" Class="User">
+<Members>
+<Member Name="X_Offset_mm_x100" DataType="INT" Dimension="0" Radix="Decimal" Hidden="false" ExternalAccess="Read/Write">
+<Description>
+<![CDATA[X axis offset in units of [millimeters times 100]]]>
+</Description>
+</Member>
+<Member Name="Y_Offset_mm_x100" DataType="INT" Dimension="0" Radix="Decimal" Hidden="false" ExternalAccess="Read/Write">
+<Description>
+<![CDATA[Y axis offset in units of [millimeters times 100]]]>
+</Description>
+</Member>
+<Member Name="Rotation_deg_x10" DataType="INT" Dimension="0" Radix="Decimal" Hidden="false" ExternalAccess="Read/Write">
+<Description>
+<![CDATA[Rotation in units of [degrees times 10]]]>
+</Description>
+</Member>
+<Member Name="X_Rotation_Center_mm_x100" DataType="INT" Dimension="0" Radix="Decimal" Hidden="false" ExternalAccess="Read/Write">
+<Description>
+<![CDATA[X coordinate of the center of rotation in units of [millimeters times 100]]]>
+</Description>
+</Member>
+<Member Name="Y_Rotation_Center_mm_x100" DataType="INT" Dimension="0" Radix="Decimal" Hidden="false" ExternalAccess="Read/Write">
+<Description>
+<![CDATA[Y coordinate of the center of rotation in units of [millimeters times 100]]]>
+</Description>
+</Member>
+<Member Name="X_Scale_x1000" DataType="INT" Dimension="0" Radix="Decimal" Hidden="false" ExternalAccess="Read/Write">
+<Description>
+<![CDATA[X scale factor in units of [scale times 1000].  For example, use 1000 for a scale of 1]]>
+</Description>
+</Member>
+<Member Name="Y_Scale_x1000" DataType="INT" Dimension="0" Radix="Decimal" Hidden="false" ExternalAccess="Read/Write">
+<Description>
+<![CDATA[Y scale factor in units of [scale times 1000].  For example, use 1000 for a scale of 1]]>
+</Description>
+</Member>
+<Member Name="Reserved" DataType="INT" Dimension="0" Radix="Decimal" Hidden="false" ExternalAccess="Read/Write">
+<Description>
+<![CDATA[Reserved]]>
+</Description>
+</Member>
+<Member Name="Marker_Command" DataType="INT" Dimension="0" Radix="Decimal" Hidden="false" ExternalAccess="Read/Write">
+<Description>
+<![CDATA[Numeric command from PLC to marker]]>
+</Description>
+</Member>
+<Member Name="Computed_Job_Field_Index" DataType="INT" Dimension="0" Radix="Decimal" Hidden="false" ExternalAccess="Read/Write">
+<Description>
+<![CDATA[The field index number for the computed field]]>
+</Description>
+</Member>
+<Member Name="Mark_Timeout_Sec" DataType="INT" Dimension="0" Radix="Decimal" Hidden="false" ExternalAccess="Read/Write">
+<Description>
+<![CDATA[The maximum time to allow for marking [seconds].  An error is generated if this time is exceeded.]]>
+</Description>
+</Member>
+<Member Name="Reserved_1" DataType="INT" Dimension="0" Radix="Decimal" Hidden="false" ExternalAccess="Read/Write">
+<Description>
+<![CDATA[Reserved]]>
+</Description>
+</Member>
+<Member Name="Barcode_Pass_Grade" DataType="INT" Dimension="0" Radix="Decimal" Hidden="false" ExternalAccess="Read/Write">
+<Description>
+<![CDATA[Pass grade for barcode verification]]>
+</Description>
+</Member>
+<Member Name="Max_Remarks" DataType="INT" Dimension="0" Radix="Decimal" Hidden="false" ExternalAccess="Read/Write">
+<Description>
+<![CDATA[Maximum number of remark attempts if camera verification fails]]>
+</Description>
+</Member>
+<Member Name="Short_Job_Field" DataType="Job_Field" Dimension="5" Radix="NullType" Hidden="false" ExternalAccess="Read/Write">
+<Description>
+<![CDATA[The field index numbers of up to five 32-character string fields]]>
+</Description>
+</Member>
+<Member Name="Long_Job_Field" DataType="Job_Field" Dimension="0" Radix="NullType" Hidden="false" ExternalAccess="Read/Write">
+<Description>
+<![CDATA[The field index numbers of a single 64-character string field]]>
+</Description>
+</Member>
+<Member Name="Marker_Job_File_Name" DataType="String32" Dimension="0" Radix="NullType" Hidden="false" ExternalAccess="Read/Write">
+<Description>
+<![CDATA[The name of the marker job file to load]]>
+</Description>
+</Member>
+<Member Name="Camera_Job_File_Name" DataType="String32" Dimension="0" Radix="NullType" Hidden="false" ExternalAccess="Read/Write">
+<Description>
+<![CDATA[The name of the camera job file to load]]>
+</Description>
+</Member>
+<Member Name="Short_Field_String" DataType="String32" Dimension="5" Radix="NullType" Hidden="false" ExternalAccess="Read/Write">
+<Description>
+<![CDATA[Short string field values [32-characters]]]>
+</Description>
+</Member>
+<Member Name="Long_Field_String" DataType="String128" Dimension="0" Radix="NullType" Hidden="false" ExternalAccess="Read/Write">
+<Description>
+<![CDATA[Long string field value [128-characters]]]>
+</Description>
+</Member>
+</Members>
+<Dependencies>
+<Dependency Type="DataType" Name="Job_Field"/>
+<Dependency Type="DataType" Name="Job_Field"/>
+<Dependency Type="DataType" Name="String32"/>
+<Dependency Type="DataType" Name="String32"/>
+<Dependency Type="DataType" Name="String32"/>
+<Dependency Type="DataType" Name="String128"/>
+</Dependencies>
+</DataType>
+<DataType Name="String32" Family="StringFamily" Class="User">
+<Members>
+<Member Name="LEN" DataType="DINT" Dimension="0" Radix="Decimal" Hidden="false" ExternalAccess="Read/Write"/>
+<Member Name="DATA" DataType="SINT" Dimension="32" Radix="ASCII" Hidden="false" ExternalAccess="Read/Write"/>
+</Members>
+</DataType>
+<DataType Name="LEC_T2O" Family="NoFamily" Class="User">
+<Members>
+<Member Name="Marker_State" DataType="INT" Dimension="0" Radix="Decimal" Hidden="false" ExternalAccess="Read/Write">
+<Description>
+<![CDATA[The numeric marker state]]>
+</Description>
+</Member>
+<Member Name="Reserved" DataType="INT" Dimension="0" Radix="Decimal" Hidden="false" ExternalAccess="Read/Write"/>
+<Member Name="Last_Mark_Cycle_Time_Ms" DataType="DINT" Dimension="0" Radix="Decimal" Hidden="false" ExternalAccess="Read/Write">
+<Description>
+<![CDATA[The elapsed cycle time, or cycle time of the last mark in milliseconds]]>
+</Description>
+</Member>
+<Member Name="Status_Word" DataType="DINT" Dimension="0" Radix="Decimal" Hidden="false" ExternalAccess="Read/Write">
+<Description>
+<![CDATA[LEC Standard IO word]]>
+</Description>
+</Member>
+<Member Name="Marker_Error_Code" DataType="INT" Dimension="0" Radix="Decimal" Hidden="false" ExternalAccess="Read/Write">
+<Description>
+<![CDATA[The marker error code (0 = No Error)]]>
+</Description>
+</Member>
+<Member Name="Controller_Error_Code" DataType="INT" Dimension="0" Radix="Decimal" Hidden="false" ExternalAccess="Read/Write">
+<Description>
+<![CDATA[The controller error code (LEC or Couth) (0 = No Error)]]>
+</Description>
+</Member>
+<Member Name="Heart_Beat" DataType="DINT" Dimension="0" Radix="Decimal" Hidden="false" ExternalAccess="Read/Write">
+<Description>
+<![CDATA[Heartbeat indicator.  Increasing number.]]>
+</Description>
+</Member>
+<Member Name="Input_Field_Checksum" DataType="DINT" Dimension="0" Radix="Decimal" Hidden="false" ExternalAccess="Read/Write">
+<Description>
+<![CDATA[Simple checksum of all input field bytes]]>
+</Description>
+</Member>
+<Member Name="Echo_Job_File_Name" DataType="String32" Dimension="0" Radix="NullType" Hidden="false" ExternalAccess="Read/Write">
+<Description>
+<![CDATA[An echo of the job file name that has been loaded]]>
+</Description>
+</Member>
+<Member Name="Results_Field" DataType="String128" Dimension="0" Radix="NullType" Hidden="false" ExternalAccess="Read/Write">
+<Description>
+<![CDATA[A string results field generated by the marker]]>
+</Description>
+</Member>
+<Member Name="Marker_State_Desc" DataType="String64" Dimension="0" Radix="NullType" Hidden="false" ExternalAccess="Read/Write">
+<Description>
+<![CDATA[A description of the current marker state]]>
+</Description>
+</Member>
+<Member Name="Marker_Error_Desc" DataType="String128" Dimension="0" Radix="NullType" Hidden="false" ExternalAccess="Read/Write">
+<Description>
+<![CDATA[A description of the current marker error]]>
+</Description>
+</Member>
+</Members>
+<Dependencies>
+<Dependency Type="DataType" Name="String32"/>
+<Dependency Type="DataType" Name="String128"/>
+<Dependency Type="DataType" Name="String64"/>
+<Dependency Type="DataType" Name="String128"/>
+</Dependencies>
+</DataType>
+<DataType Name="Job_Field" Family="NoFamily" Class="User">
+<Members>
+<Member Name="Field_Index" DataType="SINT" Dimension="0" Radix="Decimal" Hidden="false" ExternalAccess="Read/Write"/>
+<Member Name="Uniqueness" DataType="SINT" Dimension="0" Radix="Decimal" Hidden="false" ExternalAccess="Read/Write"/>
+<Member Name="Verify" DataType="SINT" Dimension="0" Radix="Decimal" Hidden="false" ExternalAccess="Read/Write"/>
+<Member Name="Reserved" DataType="SINT" Dimension="0" Radix="Decimal" Hidden="false" ExternalAccess="Read/Write"/>
+</Members>
+</DataType>
+</DataTypes>
+<Modules Use="Context">
+<Module Use="Reference" Name="T2">
+</Module>
+<Module Use="Reference" Name="Laser">
+</Module>
+</Modules>
+<Tags Use="Context">
+<Tag Name="Laser_Outputs" TagType="Base" DataType="LEC_T2O" Constant="false" ExternalAccess="Read/Write">
+<Data>01 00 00 00 C8 0A 00 00 01 00 00 00 00 00 00 00 
+EE 59 02 00 93 1A 00 00 10 00 00 00 53 65 72 69 
+65 73 30 5F 54 65 78 74 2E 64 61 74 00 00 00 00 
+00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
+00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
+00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
+00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
+00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
+00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
+00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
+00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
+00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
+1B 00 00 00 5B 31 5D 20 52 65 61 64 79 3A 20 48 
+6F 73 74 20 4D 6F 64 65 20 61 63 74 69 76 65 00 
+61 6E 64 00 00 00 00 00 00 00 00 00 00 00 00 00 
+00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
+00 00 00 00 08 00 00 00 4E 6F 20 65 72 72 6F 72 
+00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
+00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
+00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
+00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
+00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
+00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
+00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
+00 00 00 00 00 00 00 00</Data>
+<Data Format="Decorated">
+<Structure DataType="LEC_T2O">
+<DataValueMember Name="Marker_State" DataType="INT" Radix="Decimal" Value="1"/>
+<DataValueMember Name="Reserved" DataType="INT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="Last_Mark_Cycle_Time_Ms" DataType="DINT" Radix="Decimal" Value="2760"/>
+<DataValueMember Name="Status_Word" DataType="DINT" Radix="Decimal" Value="1"/>
+<DataValueMember Name="Marker_Error_Code" DataType="INT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="Controller_Error_Code" DataType="INT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="Heart_Beat" DataType="DINT" Radix="Decimal" Value="154094"/>
+<DataValueMember Name="Input_Field_Checksum" DataType="DINT" Radix="Decimal" Value="6803"/>
+<StructureMember Name="Echo_Job_File_Name" DataType="String32">
+<DataValueMember Name="LEN" DataType="DINT" Radix="Decimal" Value="16"/>
+<DataValueMember Name="DATA" DataType="String32" Radix="ASCII">
+<![CDATA['Series0_Text.dat']]>
+</DataValueMember>
+</StructureMember>
+<StructureMember Name="Results_Field" DataType="String128">
+<DataValueMember Name="LEN" DataType="DINT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="DATA" DataType="String128" Radix="ASCII">
+<![CDATA[]]>
+</DataValueMember>
+</StructureMember>
+<StructureMember Name="Marker_State_Desc" DataType="String64">
+<DataValueMember Name="LEN" DataType="DINT" Radix="Decimal" Value="27"/>
+<DataValueMember Name="DATA" DataType="String64" Radix="ASCII">
+<![CDATA['[1] Ready: Host Mode active']]>
+</DataValueMember>
+</StructureMember>
+<StructureMember Name="Marker_Error_Desc" DataType="String128">
+<DataValueMember Name="LEN" DataType="DINT" Radix="Decimal" Value="8"/>
+<DataValueMember Name="DATA" DataType="String128" Radix="ASCII">
+<![CDATA['No error']]>
+</DataValueMember>
+</StructureMember>
+</Structure>
+</Data>
+</Tag>
+<Tag Name="Laser_Inputs" TagType="Base" DataType="LEC_O2T" Constant="false" ExternalAccess="Read/Write">
+<Data>00 00 00 00 00 00 00 00 00 00 E8 03 E8 03 00 00 
+00 00 00 00 0A 00 00 00 00 00 00 00 01 00 00 00 
+02 00 00 00 03 00 00 00 04 00 00 00 05 00 00 00 
+00 00 00 00 10 00 00 00 53 65 72 69 65 73 30 5F 
+54 65 78 74 2E 64 61 74 00 00 00 00 00 00 00 00 
+00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
+00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
+00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
+4C 69 6E 65 31 00 00 00 00 00 00 00 00 00 00 00 
+00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
+00 00 00 00 4C 69 6E 65 32 00 00 00 00 00 00 00 
+00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
+00 00 00 00 00 00 00 00 4C 69 6E 65 33 00 00 00 
+00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
+00 00 00 00 00 00 00 00 05 00 00 00 4C 69 6E 65 
+34 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
+00 00 00 00 00 00 00 00 00 00 00 00 05 00 00 00 
+4C 69 6E 65 35 00 00 00 00 00 00 00 00 00 00 00 
+00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
+5B 00 00 00 32 39 35 2E 30 30 2C 35 38 39 35 2C 
+35 30 30 2C 33 30 30 2C 33 30 2C 37 35 2C 31 35 
+30 2C 37 35 2C 30 2C 34 30 2E 30 30 2C 32 35 2E 
+30 2C 34 2C 30 2C 30 2C 30 2C 30 2E 30 2C 30 2C 
+30 2C 32 2E 35 35 30 2C 32 2E 35 35 30 2C 30 2E 
+30 2C 30 2E 30 2C 30 2C 30 2C 30 2C 30 2C 31 00 
+00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
+00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
+00 00 00 00</Data>
+<Data Format="Decorated">
+<Structure DataType="LEC_O2T">
+<DataValueMember Name="X_Offset_mm_x100" DataType="INT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="Y_Offset_mm_x100" DataType="INT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="Rotation_deg_x10" DataType="INT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="X_Rotation_Center_mm_x100" DataType="INT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="Y_Rotation_Center_mm_x100" DataType="INT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="X_Scale_x1000" DataType="INT" Radix="Decimal" Value="1000"/>
+<DataValueMember Name="Y_Scale_x1000" DataType="INT" Radix="Decimal" Value="1000"/>
+<DataValueMember Name="Reserved" DataType="INT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="Marker_Command" DataType="INT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="Computed_Job_Field_Index" DataType="INT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="Mark_Timeout_Sec" DataType="INT" Radix="Decimal" Value="10"/>
+<DataValueMember Name="Reserved_1" DataType="INT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="Barcode_Pass_Grade" DataType="INT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="Max_Remarks" DataType="INT" Radix="Decimal" Value="0"/>
+<ArrayMember Name="Short_Job_Field" DataType="Job_Field" Dimensions="5">
+<Element Index="[0]">
+<Structure DataType="Job_Field">
+<DataValueMember Name="Field_Index" DataType="SINT" Radix="Decimal" Value="1"/>
+<DataValueMember Name="Uniqueness" DataType="SINT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="Verify" DataType="SINT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="Reserved" DataType="SINT" Radix="Decimal" Value="0"/>
+</Structure>
+</Element>
+<Element Index="[1]">
+<Structure DataType="Job_Field">
+<DataValueMember Name="Field_Index" DataType="SINT" Radix="Decimal" Value="2"/>
+<DataValueMember Name="Uniqueness" DataType="SINT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="Verify" DataType="SINT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="Reserved" DataType="SINT" Radix="Decimal" Value="0"/>
+</Structure>
+</Element>
+<Element Index="[2]">
+<Structure DataType="Job_Field">
+<DataValueMember Name="Field_Index" DataType="SINT" Radix="Decimal" Value="3"/>
+<DataValueMember Name="Uniqueness" DataType="SINT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="Verify" DataType="SINT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="Reserved" DataType="SINT" Radix="Decimal" Value="0"/>
+</Structure>
+</Element>
+<Element Index="[3]">
+<Structure DataType="Job_Field">
+<DataValueMember Name="Field_Index" DataType="SINT" Radix="Decimal" Value="4"/>
+<DataValueMember Name="Uniqueness" DataType="SINT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="Verify" DataType="SINT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="Reserved" DataType="SINT" Radix="Decimal" Value="0"/>
+</Structure>
+</Element>
+<Element Index="[4]">
+<Structure DataType="Job_Field">
+<DataValueMember Name="Field_Index" DataType="SINT" Radix="Decimal" Value="5"/>
+<DataValueMember Name="Uniqueness" DataType="SINT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="Verify" DataType="SINT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="Reserved" DataType="SINT" Radix="Decimal" Value="0"/>
+</Structure>
+</Element>
+</ArrayMember>
+<StructureMember Name="Long_Job_Field" DataType="Job_Field">
+<DataValueMember Name="Field_Index" DataType="SINT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="Uniqueness" DataType="SINT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="Verify" DataType="SINT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="Reserved" DataType="SINT" Radix="Decimal" Value="0"/>
+</StructureMember>
+<StructureMember Name="Marker_Job_File_Name" DataType="String32">
+<DataValueMember Name="LEN" DataType="DINT" Radix="Decimal" Value="16"/>
+<DataValueMember Name="DATA" DataType="String32" Radix="ASCII">
+<![CDATA['Series0_Text.dat']]>
+</DataValueMember>
+</StructureMember>
+<StructureMember Name="Camera_Job_File_Name" DataType="String32">
+<DataValueMember Name="LEN" DataType="DINT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="DATA" DataType="String32" Radix="ASCII">
+<![CDATA[]]>
+</DataValueMember>
+</StructureMember>
+<ArrayMember Name="Short_Field_String" DataType="String32" Dimensions="5">
+<Element Index="[0]">
+<Structure DataType="String32">
+<DataValueMember Name="LEN" DataType="DINT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="DATA" DataType="String32" Radix="ASCII">
+<![CDATA[]]>
+</DataValueMember>
+</Structure>
+</Element>
+<Element Index="[1]">
+<Structure DataType="String32">
+<DataValueMember Name="LEN" DataType="DINT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="DATA" DataType="String32" Radix="ASCII">
+<![CDATA[]]>
+</DataValueMember>
+</Structure>
+</Element>
+<Element Index="[2]">
+<Structure DataType="String32">
+<DataValueMember Name="LEN" DataType="DINT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="DATA" DataType="String32" Radix="ASCII">
+<![CDATA[]]>
+</DataValueMember>
+</Structure>
+</Element>
+<Element Index="[3]">
+<Structure DataType="String32">
+<DataValueMember Name="LEN" DataType="DINT" Radix="Decimal" Value="5"/>
+<DataValueMember Name="DATA" DataType="String32" Radix="ASCII">
+<![CDATA['Line4']]>
+</DataValueMember>
+</Structure>
+</Element>
+<Element Index="[4]">
+<Structure DataType="String32">
+<DataValueMember Name="LEN" DataType="DINT" Radix="Decimal" Value="5"/>
+<DataValueMember Name="DATA" DataType="String32" Radix="ASCII">
+<![CDATA['Line5']]>
+</DataValueMember>
+</Structure>
+</Element>
+</ArrayMember>
+<StructureMember Name="Long_Field_String" DataType="String128">
+<DataValueMember Name="LEN" DataType="DINT" Radix="Decimal" Value="91"/>
+<DataValueMember Name="DATA" DataType="String128" Radix="ASCII">
+<![CDATA['295.00,5895,500,300,30,75,150,75,0,40.00,25.0,4,0,0,0,0.0,0,0,2.550,2.550,0.0,0.0,0,0,0,0,1']]>
+</DataValueMember>
+</StructureMember>
+</Structure>
+</Data>
+</Tag>
+<Tag Name="Dot_Peen_Output" TagType="Base" DataType="LEC_T2O" Constant="false" ExternalAccess="Read/Write">
+<Data>E7 03 00 00 00 00 00 00 00 00 00 00 01 00 00 00 
+1E 94 08 00 9A 0F 00 00 00 00 00 00 00 00 00 00 
+00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
+00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
+00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
+00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
+00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
+00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
+00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
+00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
+00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
+00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
+1E 00 00 00 57 61 69 74 69 6E 67 20 66 6F 72 20 
+39 39 39 20 74 6F 20 63 6C 65 61 72 20 65 72 72 
+6F 72 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
+00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
+00 00 00 00 17 00 00 00 31 30 31 20 46 69 6C 65 
+20 64 6F 65 73 20 6E 6F 74 20 65 78 69 73 74 00 
+73 69 6F 6E 00 63 65 65 64 73 20 6C 69 6D 69 74 
+73 20 6F 66 20 6D 61 72 6B 69 6E 67 20 61 72 65 
+61 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
+00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
+00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
+00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
+00 00 00 00 00 00 00 00</Data>
+<Data Format="Decorated">
+<Structure DataType="LEC_T2O">
+<DataValueMember Name="Marker_State" DataType="INT" Radix="Decimal" Value="999"/>
+<DataValueMember Name="Reserved" DataType="INT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="Last_Mark_Cycle_Time_Ms" DataType="DINT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="Status_Word" DataType="DINT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="Marker_Error_Code" DataType="INT" Radix="Decimal" Value="1"/>
+<DataValueMember Name="Controller_Error_Code" DataType="INT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="Heart_Beat" DataType="DINT" Radix="Decimal" Value="562206"/>
+<DataValueMember Name="Input_Field_Checksum" DataType="DINT" Radix="Decimal" Value="3994"/>
+<StructureMember Name="Echo_Job_File_Name" DataType="String32">
+<DataValueMember Name="LEN" DataType="DINT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="DATA" DataType="String32" Radix="ASCII">
+<![CDATA[]]>
+</DataValueMember>
+</StructureMember>
+<StructureMember Name="Results_Field" DataType="String128">
+<DataValueMember Name="LEN" DataType="DINT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="DATA" DataType="String128" Radix="ASCII">
+<![CDATA[]]>
+</DataValueMember>
+</StructureMember>
+<StructureMember Name="Marker_State_Desc" DataType="String64">
+<DataValueMember Name="LEN" DataType="DINT" Radix="Decimal" Value="30"/>
+<DataValueMember Name="DATA" DataType="String64" Radix="ASCII">
+<![CDATA['Waiting for 999 to clear error']]>
+</DataValueMember>
+</StructureMember>
+<StructureMember Name="Marker_Error_Desc" DataType="String128">
+<DataValueMember Name="LEN" DataType="DINT" Radix="Decimal" Value="23"/>
+<DataValueMember Name="DATA" DataType="String128" Radix="ASCII">
+<![CDATA['101 File does not exist']]>
+</DataValueMember>
+</StructureMember>
+</Structure>
+</Data>
+</Tag>
+<Tag Name="Dot_Peen_Input" TagType="Base" DataType="LEC_O2T" Constant="false" ExternalAccess="Read/Write">
+<Data>00 00 00 00 00 00 00 00 00 00 E8 03 E8 03 00 00 
+64 00 00 00 E7 03 00 00 00 00 00 00 01 00 00 00 
+00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
+00 00 00 00 0C 00 00 00 54 65 73 74 30 30 30 31 
+2E 74 78 74 00 00 00 00 00 00 00 00 00 00 00 00 
+00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
+00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
+00 00 00 00 00 00 00 00 00 00 00 00 0F 00 00 00 
+41 42 43 44 20 20 20 20 20 20 20 20 20 20 20 00 
+00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
+0F 00 00 00 41 55 54 4F 4D 41 54 49 4F 4E 20 20 
+20 20 20 00 00 00 00 00 00 00 00 00 00 00 00 00 
+00 00 00 00 0F 00 00 00 20 20 20 20 20 20 20 20 
+20 20 20 20 20 20 20 00 00 00 00 00 00 00 00 00 
+00 00 00 00 00 00 00 00 0F 00 00 00 20 20 20 20 
+20 20 20 20 20 20 20 20 20 20 20 00 00 00 00 00 
+00 00 00 00 00 00 00 00 00 00 00 00 0F 00 00 00 
+20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 00 
+00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
+00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
+00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
+00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
+00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
+00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
+00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
+00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
+00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
+00 00 00 00</Data>
+<Data Format="Decorated">
+<Structure DataType="LEC_O2T">
+<DataValueMember Name="X_Offset_mm_x100" DataType="INT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="Y_Offset_mm_x100" DataType="INT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="Rotation_deg_x10" DataType="INT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="X_Rotation_Center_mm_x100" DataType="INT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="Y_Rotation_Center_mm_x100" DataType="INT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="X_Scale_x1000" DataType="INT" Radix="Decimal" Value="1000"/>
+<DataValueMember Name="Y_Scale_x1000" DataType="INT" Radix="Decimal" Value="1000"/>
+<DataValueMember Name="Reserved" DataType="INT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="Marker_Command" DataType="INT" Radix="Decimal" Value="100"/>
+<DataValueMember Name="Computed_Job_Field_Index" DataType="INT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="Mark_Timeout_Sec" DataType="INT" Radix="Decimal" Value="999"/>
+<DataValueMember Name="Reserved_1" DataType="INT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="Barcode_Pass_Grade" DataType="INT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="Max_Remarks" DataType="INT" Radix="Decimal" Value="0"/>
+<ArrayMember Name="Short_Job_Field" DataType="Job_Field" Dimensions="5">
+<Element Index="[0]">
+<Structure DataType="Job_Field">
+<DataValueMember Name="Field_Index" DataType="SINT" Radix="Decimal" Value="1"/>
+<DataValueMember Name="Uniqueness" DataType="SINT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="Verify" DataType="SINT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="Reserved" DataType="SINT" Radix="Decimal" Value="0"/>
+</Structure>
+</Element>
+<Element Index="[1]">
+<Structure DataType="Job_Field">
+<DataValueMember Name="Field_Index" DataType="SINT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="Uniqueness" DataType="SINT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="Verify" DataType="SINT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="Reserved" DataType="SINT" Radix="Decimal" Value="0"/>
+</Structure>
+</Element>
+<Element Index="[2]">
+<Structure DataType="Job_Field">
+<DataValueMember Name="Field_Index" DataType="SINT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="Uniqueness" DataType="SINT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="Verify" DataType="SINT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="Reserved" DataType="SINT" Radix="Decimal" Value="0"/>
+</Structure>
+</Element>
+<Element Index="[3]">
+<Structure DataType="Job_Field">
+<DataValueMember Name="Field_Index" DataType="SINT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="Uniqueness" DataType="SINT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="Verify" DataType="SINT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="Reserved" DataType="SINT" Radix="Decimal" Value="0"/>
+</Structure>
+</Element>
+<Element Index="[4]">
+<Structure DataType="Job_Field">
+<DataValueMember Name="Field_Index" DataType="SINT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="Uniqueness" DataType="SINT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="Verify" DataType="SINT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="Reserved" DataType="SINT" Radix="Decimal" Value="0"/>
+</Structure>
+</Element>
+</ArrayMember>
+<StructureMember Name="Long_Job_Field" DataType="Job_Field">
+<DataValueMember Name="Field_Index" DataType="SINT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="Uniqueness" DataType="SINT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="Verify" DataType="SINT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="Reserved" DataType="SINT" Radix="Decimal" Value="0"/>
+</StructureMember>
+<StructureMember Name="Marker_Job_File_Name" DataType="String32">
+<DataValueMember Name="LEN" DataType="DINT" Radix="Decimal" Value="12"/>
+<DataValueMember Name="DATA" DataType="String32" Radix="ASCII">
+<![CDATA['Test0001.txt']]>
+</DataValueMember>
+</StructureMember>
+<StructureMember Name="Camera_Job_File_Name" DataType="String32">
+<DataValueMember Name="LEN" DataType="DINT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="DATA" DataType="String32" Radix="ASCII">
+<![CDATA[]]>
+</DataValueMember>
+</StructureMember>
+<ArrayMember Name="Short_Field_String" DataType="String32" Dimensions="5">
+<Element Index="[0]">
+<Structure DataType="String32">
+<DataValueMember Name="LEN" DataType="DINT" Radix="Decimal" Value="15"/>
+<DataValueMember Name="DATA" DataType="String32" Radix="ASCII">
+<![CDATA['ABCD           ']]>
+</DataValueMember>
+</Structure>
+</Element>
+<Element Index="[1]">
+<Structure DataType="String32">
+<DataValueMember Name="LEN" DataType="DINT" Radix="Decimal" Value="15"/>
+<DataValueMember Name="DATA" DataType="String32" Radix="ASCII">
+<![CDATA['AUTOMATION     ']]>
+</DataValueMember>
+</Structure>
+</Element>
+<Element Index="[2]">
+<Structure DataType="String32">
+<DataValueMember Name="LEN" DataType="DINT" Radix="Decimal" Value="15"/>
+<DataValueMember Name="DATA" DataType="String32" Radix="ASCII">
+<![CDATA['               ']]>
+</DataValueMember>
+</Structure>
+</Element>
+<Element Index="[3]">
+<Structure DataType="String32">
+<DataValueMember Name="LEN" DataType="DINT" Radix="Decimal" Value="15"/>
+<DataValueMember Name="DATA" DataType="String32" Radix="ASCII">
+<![CDATA['               ']]>
+</DataValueMember>
+</Structure>
+</Element>
+<Element Index="[4]">
+<Structure DataType="String32">
+<DataValueMember Name="LEN" DataType="DINT" Radix="Decimal" Value="15"/>
+<DataValueMember Name="DATA" DataType="String32" Radix="ASCII">
+<![CDATA['               ']]>
+</DataValueMember>
+</Structure>
+</Element>
+</ArrayMember>
+<StructureMember Name="Long_Field_String" DataType="String128">
+<DataValueMember Name="LEN" DataType="DINT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="DATA" DataType="String128" Radix="ASCII">
+<![CDATA[]]>
+</DataValueMember>
+</StructureMember>
+</Structure>
+</Data>
+</Tag>
+</Tags>
+<Programs Use="Context">
+<Program Use="Context" Name="MainProgram">
+<Tags Use="Context">
+<Tag Name="bLaserEnabled" TagType="Base" DataType="BOOL" Radix="Decimal" Constant="false" ExternalAccess="Read/Write">
+<Data>00</Data>
+<Data Format="Decorated">
+<DataValue DataType="BOOL" Radix="Decimal" Value="0"/>
+</Data>
+</Tag>
+<Tag Name="bPauseDotPeen" TagType="Base" DataType="BOOL" Radix="Decimal" Constant="false" ExternalAccess="Read/Write">
+<Data>00</Data>
+<Data Format="Decorated">
+<DataValue DataType="BOOL" Radix="Decimal" Value="0"/>
+</Data>
+</Tag>
+<Tag Name="bDotPeenEnabled" TagType="Base" DataType="BOOL" Radix="Decimal" Constant="false" ExternalAccess="Read/Write">
+<Data>01</Data>
+<Data Format="Decorated">
+<DataValue DataType="BOOL" Radix="Decimal" Value="1"/>
+</Data>
+</Tag>
+<Tag Name="bPauseLaser" TagType="Base" DataType="BOOL" Radix="Decimal" Constant="false" ExternalAccess="Read/Write">
+<Data>00</Data>
+<Data Format="Decorated">
+<DataValue DataType="BOOL" Radix="Decimal" Value="0"/>
+</Data>
+</Tag>
+</Tags>
+<Routines Use="Context">
+<Routine Use="Target" Name="MainRoutine" Type="RLL">
+<RLLContent>
+<Rung Number="0" Type="N">
+<Comment>
+<![CDATA[Copy the local PLC structure to the LEC via Ethernert IP.  Copy 332 bytes.]]>
+</Comment>
+<Text>
+<![CDATA[COP(Laser_Inputs,Laser:O.Data[0],436);]]>
+</Text>
+</Rung>
+<Rung Number="1" Type="N">
+<Comment>
+<![CDATA[Copy Ethernet IP data from the LEC to local PLC structure.  Length is '1' because we are copying a single structure.]]>
+</Comment>
+<Text>
+<![CDATA[COP(Laser:I.Data[0],Laser_Outputs,1);]]>
+</Text>
+</Rung>
+<Rung Number="2" Type="N">
+<Comment>
+<![CDATA[Copy the local PLC structure to the Couth T2 via Ethernert IP.  Copy 332 bytes.]]>
+</Comment>
+<Text>
+<![CDATA[COP(Dot_Peen_Input,T2:O.Data[0],436);]]>
+</Text>
+</Rung>
+<Rung Number="3" Type="N">
+<Comment>
+<![CDATA[Copy Ethernet IP data from the Couth T2 to local PLC structure.  Length is '1' because we are copying a single structure.]]>
+</Comment>
+<Text>
+<![CDATA[COP(T2:I.Data[0],Dot_Peen_Output,1);]]>
+</Text>
+</Rung>
+<Rung Number="4" Type="N">
+<Text>
+<![CDATA[XIC(bLaserEnabled)XIO(bPauseLaser)JSR(Laser,0);]]>
+</Text>
+</Rung>
+<Rung Number="5" Type="N">
+<Text>
+<![CDATA[XIC(bDotPeenEnabled)XIO(bPauseDotPeen)JSR(T2,0);]]>
+</Text>
+</Rung>
+</RLLContent>
+</Routine>
+<Routine Use="Reference" Name="T2">
+</Routine>
+<Routine Use="Reference" Name="Laser">
+</Routine>
+</Routines>
+</Program>
+</Programs>
+</Controller>
+</RSLogix5000Content>

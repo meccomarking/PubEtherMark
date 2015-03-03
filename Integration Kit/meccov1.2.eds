@@ -1,0 +1,1051 @@
+$ EZ-EDS Version 3.9 Generated Electronic Data Sheet
+
+[File]
+        DescText = "Mecco EDS File";
+        CreateDate = 08-06-2013;
+        CreateTime = 07:03:13;
+        ModDate = 08-06-2013;
+        ModTime = 07:03:13;
+        Revision = 1.2;
+        HomeURL = "http://www.mecco.com/";
+
+[Device]
+        VendCode = 1316;
+        VendName = "Mecco";
+        ProdType = 43;
+        ProdTypeStr = "Generic Device";
+        ProdCode = 256;
+        MajRev = 2;
+        MinRev = 86;
+        ProdName = "EtherMark";
+        Icon = "m-icon (1).ico";
+        IconContents =
+                "AAABAAEAICAAAAAAIACoEAAAFgAAACgAAAAgAAAAQAAAAAEAIAAAAAAAACAA"
+                "AAAAAAAAAAAAAAAAAAAAAABdOwBKWDsA51Y5Af9SNwH/UDUB/081Af9ONAH/"
+                "TjQB/040Af9ONAH/TjQB/040Af9ONAH/TjQB/040Af9ONAH/TjQB/040Af9O"
+                "NAH/TjQB/040Af9ONAH/TjQB/040Af9ONAH/TjQB/040Af9ONAH/TTMB/000"
+                "Af9NMwDkTzQASl8/AOZdPgH/WTwB/1Y5Af9UOAH/UjcB/1I3Af9SNwH/UjcB"
+                "/1I3Af9SNwH/UjcB/1I3Af9SNwH/UjcB/1I3Af9SNwH/UjcB/1I3Af9SNwH/"
+                "UjcB/1I3Af9SNwH/UjcB/1I3Af9SNwH/UjYB/1E2Af9QNQH/TzUB/081Af9P"
+                "NADnZkUE/2JCAf9fQAH/XD4B/1o8Af9YOwH/WDsB/1g7Af9YOwH/WDsB/1g7"
+                "Af9YOwH/WDsB/1g7Af9YOwH/WDsB/1g7Af9YOwH/WDsB/1g7Af9YOwH/WDsB"
+                "/1g7Af9YOwH/WDsB/1g7Af9XOwH/VjoB/1Q4Af9TNwH/UjcB/1I3Af9tTQ3/"
+                "akgH/2ZEAf9jQgH/YEAB/18/Af9fPwH/Xj8B/14/Af9ePwH/Xj8B/14/Af9e"
+                "PwH/Xj8B/14/Af9ePwH/Xj8B/14/Af9ePwH/Xj8B/14/Af9ePwH/Xj8B/14/"
+                "Af9ePwH/Xj8B/14/Af9dPgH/Wz0B/1g7Af9WOQH/VTkB/3NTFP9wTw//bUsJ"
+                "/2lGA/9mRAH/ZUMB/2VDAf9lQwH/ZUMB/2VDAf9lQwH/ZUMB/2VDAf9lQwH/"
+                "ZUMB/2VDAf9lQwH/ZUMB/2VDAf9lQwH/ZUMB/2VDAf9lQwH/ZUMB/2VDAf9l"
+                "QwH/ZEMB/2NBAf9gQAH/Xj4B/1s8Af9ZOwH/eFcZ/3ZVFf9yUA//b0wJ/2tH"
+                "A/9qRgH/akYB/2pGAf9qRgH/akYB/2pGAf9qRgH/akYB/2pGAf9qRgH/akYB"
+                "/2pGAf9qRgH/akYB/2pGAf9qRgH/akYB/2pGAf9qRgH/akYB/2pGAf9pRQH/"
+                "aEQB/2VCAf9iQQH/Xj4B/1w9Af96WRr/eVcX/3VTEf9yTgv/bkoF/21IAv9s"
+                "RwH/bEcB/2xHAf9sRwH/bEcB/2xHAf9sRwH/bEcB/2xHAf9sRwH/bEcB/2xH"
+                "Af9sRwH/bEcB/2xHAf9sRwH/bEcB/2xHAf9sRwH/bEcB/2xHAf9qRgH/Z0QB"
+                "/2RCAf9hQAH/Xj4B/31cG/97WRf/d1QR/3RQC/9wTAX/b0oC/25JAf9uSQH/"
+                "bkkB/25JAf9uSQH/bkkB/25JAf9uSQH/bkkB/25JAf9uSQH/bkkB/25JAf9u"
+                "SQH/bkkB/25JAf9uSQH/bkkB/25JAf9uSQH/bkkB/2xIAf9qRgH/ZkQB/2NC"
+                "Af9gQAH/f1wb/31aF/96VRH/d1EL/3NNBf9ySwL/cUoB/3FKAf9xSgH/cUoB"
+                "/3FKAf9xSgH/cUoB/3FKAf9xSgH/cUoB/3FKAf9xSgH/cUoB/3FKAf9xSgH/"
+                "cUoB/3FKAf9xSgH/cUoB/3FKAf9xSgH/b0kB/21HAf9pRQH/ZUIB/2NBAf+C"
+                "Xhv/gFsX/31XEf95Uwv/dk8F/3VNAv90TAH/dEwB/3RMAf90TAH/dEwB/3RM"
+                "Af90TAH/dEwB/3RMAf90TAH/dEwB/3RMAf90TAH/dEwB/3RMAf90TAH/dEwB"
+                "/3RMAf90TAH/dEwB/3RMAf9ySwH/b0kB/2xHAf9oRAH/ZUIB/4RgG/+CXRf/"
+                "f1kR/3tVC//Txq7/4trJ/52BSv92TgH/dk4B/3ZOAf92TgH/dk4B/3ZOAf92"
+                "TgH/i2op/+bf0f/Qw6j/hGAb/3ZOAf92TgH/dk4B/3ZOAf92TgH/dk4B/3ZO"
+                "Af92TgH/nYBJ/+HZyP/RxKz/bkgB/2pGAf9nRAH/h2Ib/4VfF/+BWxH/flcL"
+                "/+vl2f/6+PX/qpBe/3lQAf95UAH/eVAB/3lQAf95UAH/eVAB/3lQAf+UczT/"
+                "/////+Xdzv+LZyP/eVAB/3lQAf95UAH/eVAB/3lQAf95UAH/eVAB/3lQAf+p"
+                "jlz/+ff0/+rk2P9wSgH/bUgB/2pGAf+JZBv/h2EX/4RdEf+BWQv/6OHT//n3"
+                "8/+qj1v/fFIB/3xSAf98UgH/fFIB/3xSAf98UgH/fFIB/5VzMf/9/fz/5NzL"
+                "/4xoIf98UgH/fFIB/3xSAf98UgH/fFIB/3xSAf98UgH/fFIB/6mNWP/49vL/"
+                "5+DS/3NMAf9vSgH/bEgB/4xlG/+KYhf/h14R/4RaC//p4dP/+ffz/6yQW/9/"
+                "UwH/f1MB/39TAf9/UwH/f1MB/39TAf9/UwH/l3Mx//39/P/l3Mv/j2kh/39T"
+                "Af9/UwH/f1MB/39TAf9/UwH/f1MB/39TAf9/UwH/q45Y//j28v/o4NL/dk0B"
+                "/3JLAf9vSQH/j2Yb/41kF/+KYBH/h1wL/+ni0//59/P/rpFb/4JVAf+CVQH/"
+                "glUB/4JVAf+CVQH/glUB/4JVAf+adTH//v38/+bcy/+SaiH/glUB/4JVAf+C"
+                "VQH/glUB/4JVAf+CVQH/glUB/4JVAf+sj1j/+fby/+jg0v95TwH/dUwB/3JK"
+                "Af+RaBv/kGUX/41iEf+KXgv/6uLT//n38/+wklv/hVcB/4VXAf+FVwH/hVcB"
+                "/4VXAf+FVwH/hVcB/5x3Mf/+/fz/5t3L/5RsIf+FVwH/hVcB/4VXAf+FVwH/"
+                "hVcB/4VXAf+FVwH/hVcB/66QWP/59vL/6eHS/3xRAf93TgH/dEwB/5VqG/+T"
+                "Zxf/kGMR/45gC//r4tP/+ffz/7KTWv+JWQH/iVkB/4lZAf+JWQH/iVkB/4lZ"
+                "Af+JWQH/n3gx//7+/f/n3cv/l20g/4lZAf+JWQH/iVkB/4lZAf+JWQH/iVkB"
+                "/4lZAf+JWQH/sJFX//n28v/p4dL/f1MB/3tQAf94TgH/mGwa/5ZpFv+TZRD/"
+                "kWEK/+zj1P/59/L/s5NX/4xbAP+MWwD/jFsA/4xbAP+MWwD/jFsA/4xbAP+h"
+                "eS///fz7/+fcyf+abh7/jFsA/4xbAP+MWwD/jFsA/4xbAP+MWwD/jFsA/4xb"
+                "AP+wkFL/+fbx/+vj1f+CVQD/flIA/3pQAP+abhr/mWsW/5ZnEP+TYwr/7ubY"
+                "//z7+P+6nGP/j10A/49dAP+PXQD/j10A/49dAP+PXQD/j10A/6F4Kv///v7/"
+                "8u3i/6F2KP+PXQD/j10A/49dAP+PXQD/j10A/49dAP+PXQD/j10A/72gav/9"
+                "/Pv/6eDP/4VWAP+AVAD/fVEA/51vGv+bbRb/mWkQ/5ZlCv/YxqT//////+HT"
+                "uf+cbhj/kl8A/5JfAP+SXwD/kl8A/5JfAP+WZQr/yrKE////////////2Mak"
+                "/59yHv+SXwD/kl8A/5JfAP+SXwD/kl8A/5JgAf+0kU//7ufY///////DqXr/"
+                "iFgA/4NVAP+AUwD/n3Ea/51vFv+baxD/mGcK/6h+L//v6Nr///////Pt4v/o"
+                "3cj/49a9/+TXv//k177/5dnB//Dp2//8+/j/2sim/9jFof//////9fDn/+je"
+                "yf/k177/5Ne//+TXvv/k17//7ubW//r38v//////38+z/5ZpE/+KWgD/hVcA"
+                "/4FVAP+icxr/oHAW/55tEP+baQr/mWUE/6R3IP/NtIX/6d/K//Hq3f/z7eL/"
+                "8+3i//Pt4v/07uP/9O7k/9zLqv+jdR7/nGsN/8itef/r4M3/8+3i//Pt4v/z"
+                "7eL/8+3i//Tu5P/x6tz/4dK1/76eYP+bag//kV8A/4xcAP+IWQD/hFcA/6R0"
+                "Gv+jcRb/oG4Q/55qCv+cZgT/mmUB/5pkAP+aZAD/mmQA/5pkAP+aZAD/mmQA"
+                "/5pkAP+aZAD/mmQA/5pkAP+aZAD/mmQA/5pkAP+aZAD/mmQA/5pkAP+aZAD/"
+                "mmQA/5pkAP+aZAD/mWQA/5hiAP+UYAD/j10A/4paAP+HVwD/p3Ya/6VzFv+j"
+                "cBD/oWwK/59oBP+dZwH/nWYA/51mAP+dZgD/nWYA/51mAP+dZgD/nWYA/51m"
+                "AP+dZgD/nWYA/51mAP+dZgD/nWYA/51mAP+dZgD/nWYA/51mAP+dZgD/nWYA"
+                "/51mAP+cZgD/m2QA/5diAP+SXwD/jVwA/4lZAP+pdhr/p3QW/6VxEP+jbQr/"
+                "oWkE/59oAf+fZwD/n2cA/59nAP+fZwD/n2cA/59nAP+fZwD/n2cA/59nAP+f"
+                "ZwD/n2cA/59nAP+fZwD/n2cA/59nAP+fZwD/n2cA/59nAP+fZwD/n2cA/55n"
+                "AP+dZQD/mWMA/5RgAP+PXAD/jFoA/6t4Gv+pdhb/p3IQ/6VvCv+iawT/oWoB"
+                "/6FpAP+haQD/oWkA/6FpAP+haQD/oWkA/6FpAP+haQD/oWkA/6FpAP+haQD/"
+                "oWkA/6FpAP+haQD/oWkA/6FpAP+haQD/oWkA/6FpAP+haQD/oGkA/55nAP+b"
+                "ZQD/lmIA/5FfAP+NXAD/rXoc/6x4GP+pdRL/p3EM/6VuBv+kawL/o2sB/6Nr"
+                "Af+jawH/o2sB/6NrAf+jawH/o2sB/6NrAf+jawH/o2sB/6NrAf+jawH/o2sB"
+                "/6NrAf+jawH/o2sB/6NrAf+jawH/o2sB/6NrAf+jawH/oWkA/51mAP+ZYwD/"
+                "lGAA/5BeAP+wfR//r3sc/614F/+rdRL/qXIM/6hwCP+nbwf/p28H/6dvB/+n"
+                "bwf/p28H/6dvB/+nbwf/p28H/6dvB/+nbwf/p28H/6dvB/+nbwf/p28H/6dv"
+                "B/+nbwf/p28H/6dvB/+nbwf/p28H/6dvB/+mbQP/o2oA/59nAP+ZYwD/lWEA"
+                "/7SBJf+zgCP/sn4g/7B8G/+veRb/rncT/612Ev+tdhH/rXYR/612Ef+tdhH/"
+                "rXYR/612Ef+tdhH/rXYR/612Ef+tdhH/rXYR/612Ef+tdhH/rXYR/612Ef+t"
+                "dhH/rXYR/612Ef+tdhH/rXUQ/6tzDf+pcAf/pmwA/6BoAP+bZAD/toQp/7aF"
+                "Kv+2hCj/tYIl/7OAIf+yfh7/sn4d/7J9HP+yfRz/sn0c/7J9HP+yfRz/sn0c"
+                "/7J9HP+yfRz/sn0c/7J9HP+yfRz/sn0c/7J9HP+yfRz/sn0c/7J9HP+yfRz/"
+                "sn0c/7J9HP+yfRz/sHsY/653Ev+rcwr/qG0A/6NqAP+1hSvmuIgw/7iIMP+4"
+                "hy7/t4Yr/7aEKP+2hCj/toQo/7aEKP+2hCj/toQo/7aEKP+2hCj/toQo/7aE"
+                "KP+2hCj/toQo/7aEKP+2hCj/toQo/7aEKP+2hCj/toQo/7aEKP+2hCj/toQo"
+                "/7WDJv+0gSP/sn4d/695Ff+scwv/pmwA5raFKkm4iDHmuos0/7qLNP+5ijL/"
+                "uIgw/7iIMP+4iC//uIgv/7iIL/+4iC//uIgv/7iIL/+4iC//uIgv/7iIL/+4"
+                "iC//uIgv/7iIL/+4iC//uIgv/7iIL/+4iC//uIgv/7iIL/+4iC//uIcu/7eG"
+                "K/+1giX/sn4d/652E+aocAdJgAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                "AAAAAAAAAIAAAAE=";
+
+[Device Classification]
+        Class1 = EtherNetIP;
+
+[Params]
+        Param1 =
+                0,                      $ reserved, shall equal 0
+                ,,                      $ Link Path Size, Link Path
+                0x0000,                 $ Descriptor
+                0xC2,                   $ Data Type
+                1,                      $ Data Size in bytes
+                "Data_Byte",            $ name
+                "",                     $ units
+                "New Help String",      $ help string
+                ,,0,                    $ min, max, default data values
+                ,,,,                    $ mult, div, base, offset scaling
+                ,,,,                    $ mult, div, base, offset links
+                ;                       $ decimal places
+
+[Assembly]
+        Assem1 =
+                "Input Data Block",
+                "20 04 24 64 30 03",
+                392,
+                0x0000,
+                ,,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1;
+        Assem2 =
+                "Output Data Block",
+                "20 04 24 70 30 03",
+                436,
+                0x0000,
+                ,,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1,
+                8,Param1;
+
+[Connection Manager]
+        Connection1 =
+                0x04010002,             $ TRIGGER AND TRANSPORT MASK
+                                        $     BIT=VAL DESCRIPTION
+                                        $        0 = 0  (class 0:null)
+                                        $        1 = 1  (class 1:dup. detect)
+                                        $        2 = 0  (class 2:acknowledged)
+                                        $        3 = 0  (class 3:verified)
+                                        $        4 = 0  (class 4:non-block)
+                                        $        5 = 0  (class 5:non-block, frag)
+                                        $        6 = 0  (class 6:multicast, frag)
+                                        $   7-15 = 0  (class  :reserved)
+                                        $      16 = 1  (trigger: cyclic)
+                                        $      17 = 0  (trigger: cos)
+                                        $      18 = 0  (trigger: appl)
+                                        $ 19-23 = 0  (trigger: reserved (must be zero))
+                                        $      24 = 0  (transport type: listen-only)
+                                        $      25 = 0  (transport type: input-only)
+                                        $      26 = 1  (transport type: exclusive-owner)
+                                        $      27 = 0  (transport type: redundant-owner)
+                                        $ 28-30 = 0  (reserved (must be zero))
+                                        $      31 = 1  (client = 0 / server = 1)
+                0x44640405,             $ CONNECTION PARAMETERS BIT ASSIGNMENTS
+
+                                        $     BIT=VAL DESCRIPTION
+                                        $        0 = 1  (O=>T fixed)
+                                        $        1 = 0  (O=>T variable)
+                                        $        2 = 1  (T=>O fixed)
+                                        $        3 = 0  (T=>O variable)
+                                        $     4-7 = 0  (reserved (must be zero))
+                                        $   8-10 = 4  (O=>T header (4 byte run/idle))
+                                        $      11 = 0  (reserved (must be zero))
+                                        $ 12-14 = 0  (T=>O header (pure data))
+                                        $      15 = 0  (reserved (must be zero))
+                                        $      16 = 0  (O=>T connection type: NULL)
+                                        $      17 = 0  (O=>T connection type: MULTI)
+                                        $      18 = 1  (O=>T connection type: P2P)
+                                        $      19 = 0  (O=>T connection type: RSVD)
+                                        $      20 = 0  (T=>O connection type: NULL)
+                                        $      21 = 1  (T=>O connection type: MULTI)
+                                        $      22 = 0  (T=>O connection type: P2P)
+                                        $      23 = 0  (T=>O connection type: RSVD)
+                                        $      24 = 0  (O=>T priority: LOW)
+                                        $      25 = 0  (O=>T priority: HIGH)
+                                        $      26 = 1  (O=>T priority: SCHEDULED)
+                                        $      27 = 0  (O=>T priority: RSVD)
+                                        $      28 = 0  (T=>O priority: LOW)
+                                        $      29 = 0  (T=>O priority: HIGH)
+                                        $      30 = 1  (T=>O priority: SCHEDULED)
+                                        $      31 = 0  (T=>O priority: RSVD)
+                ,,Assem2,               $ O=>T RPI, size in bytes, format
+                ,,Assem1,               $ T=>O RPI, size in bytes, format
+                ,,                      $ config part 1 (dynamic assemblies)
+                ,,                      $ config part 2 (module configuration)
+                "Data Block",           $ connection name
+                "",                     $ Help string
+                "20 04 24 01 2C 70 2C 64";    $ exclusive owner path
+
+[Port]
+        Port1 =
+                TCP,
+                "EtherNet/IP Port",
+                "20 F5 24 01",
+                1;
+
+[Capacity]
+        MaxIOConnections = 10;
+        MaxMsgConnections = 10;
+        MaxConsumersPerMcast = 10;
+        TSpec1 = Tx, 324, 100;
+        TSpec2 = Rx, 332, 100;
+

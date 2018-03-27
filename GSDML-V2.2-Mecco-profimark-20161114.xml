@@ -1,0 +1,252 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<?xml-stylesheet href="GSDML-Stylesheet-HTML-V2.2.xsl" type="text/xsl"?>
+<ISO15745Profile xmlns="http://www.profibus.com/GSDML/2003/11/DeviceProfile" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.profibus.com/GSDML/2003/11/DeviceProfile  ..\XSD\GSDML-DeviceProfile-v2.2.xsd">
+  <ProfileHeader>
+    <ProfileIdentification>PROFINET Device Profile</ProfileIdentification>
+    <ProfileRevision>1.00</ProfileRevision>
+    <ProfileName>Device Profile for PROFINET Devices</ProfileName>
+    <ProfileSource>PROFIBUS Nutzerorganisation e. V. (PNO)</ProfileSource>
+    <ProfileClassID>Device</ProfileClassID>
+    <ISO15745Reference>
+      <ISO15745Part>4</ISO15745Part>
+      <ISO15745Edition>1</ISO15745Edition>
+      <ProfileTechnology>GSDML</ProfileTechnology>
+    </ISO15745Reference>
+  </ProfileHeader>
+  <ProfileBody>
+    <DeviceIdentity VendorID="0x0149" DeviceID="0x0004">
+      <InfoText TextId="TOK_DevIdent_InfoText"/>
+      <VendorName Value="Mecco"/>
+    </DeviceIdentity>
+    <DeviceFunction>
+      <Family MainFamily="I/O" ProductFamily="ProfiMark"/>
+    </DeviceFunction>
+    <ApplicationProcess>
+      <DeviceAccessPointList>
+        <DeviceAccessPointItem ID="DAP 1" PhysicalSlots="0..6" ModuleIdentNumber="0x00000001" MinDeviceInterval="512" ImplementationType="portStack" DNS_CompatibleName="profimark" ExtendedAddressAssignmentSupported="false" AddressAssignment="LOCAL" FixedInSlots="0" ObjectUUID_LocalIndex="1" RequiredSchemaVersion="V2.2" MaxSupportedRecordSize="4068" ParameterizationSpeedupSupported="true" PowerOnToCommReady="0">          
+          <ModuleInfo CategoryRef="ID_ERTEC400DEVKit">
+            <Name TextId="TOK_Standard"/>
+            <InfoText TextId="TOK_ModInfo_InfoTextId_DAP1"/>
+            <VendorName Value="Mecco"/>
+            <OrderNumber Value="6GK1 953-0CA00"/>
+            <HardwareRelease Value="A1.0"/>
+            <SoftwareRelease Value="Z1.0"/>
+          </ModuleInfo>
+          <SubslotList>
+            <SubslotItem SubslotNumber="32768" TextId="TOK_Subslot_8000"/>
+            <SubslotItem SubslotNumber="32769" TextId="TOK_Subslot_8001"/>
+          </SubslotList>
+          <IOConfigData MaxInputLength="1440" MaxOutputLength="1440"/>
+          <UseableModules>
+            <ModuleItemRef ModuleItemTarget="Input_Module1of3" FixedInSlots="1"/>
+            <ModuleItemRef ModuleItemTarget="Input_Module2of3" FixedInSlots="2"/>
+            <ModuleItemRef ModuleItemTarget="Input_Module3of3" FixedInSlots="3"/>
+            <ModuleItemRef ModuleItemTarget="Output_Module1of3" FixedInSlots="4"/>
+            <ModuleItemRef ModuleItemTarget="Output_Module2of3" FixedInSlots="5"/>
+            <ModuleItemRef ModuleItemTarget="Output_Module3of3" FixedInSlots="6"/>
+          </UseableModules>
+          <VirtualSubmoduleList>
+            <VirtualSubmoduleItem ID="DAP 1" SubmoduleIdentNumber="0x0001" Writeable_IM_Records="1 2 3 4">
+              <IOData/>
+              <ModuleInfo>
+                <Name TextId="TOK_Standard"/>
+                <InfoText TextId="TOK_ModInfo_InfoTextId_DAP1"/>
+              </ModuleInfo>
+            </VirtualSubmoduleItem>
+          </VirtualSubmoduleList>
+          <SystemDefinedSubmoduleList>
+            <InterfaceSubmoduleItem SubslotNumber="32768" SubmoduleIdentNumber="0x0002" SupportedRT_Classes="RT_CLASS_1" TextId="TOK_DAP_InterfaceModule" IsochroneModeSupported="false" SupportedProtocols="LLDP" SupportedMibs="" NetworkComponentDiagnosisSupported="true">
+              <SynchronisationMode SupportedRole="SyncSlave" MaxLocalJitter="50" T_PLL_MAX="1000" SupportedSyncProtocols="PTCP"/>
+              <ApplicationRelations NumberOfAdditionalInputCR="0" NumberOfAdditionalMulticastProviderCR="0" NumberOfAdditionalOutputCR="0" NumberOfMulticastConsumerCR="0" PullModuleAlarmSupported="true">
+                <TimingProperties SendClock="32" ReductionRatio="1 2 4 8 16 32 64 128 256 512"/>
+              </ApplicationRelations>
+            </InterfaceSubmoduleItem>
+            <PortSubmoduleItem SubslotNumber="32769" SubmoduleIdentNumber="0x0003" MAUType="100BASETXFD" TextId="TOK_Port1" MaxPortRxDelay="378" MaxPortTxDelay="1212" PortDeactivationSupported="true" LinkStateDiagnosisCapability="Up+Down"/>
+          </SystemDefinedSubmoduleList>
+        </DeviceAccessPointItem>
+      </DeviceAccessPointList>
+      <ModuleList>
+        <ModuleItem ID="Input_Module1of3" ModuleIdentNumber="0x00000030">
+          <ModuleInfo>
+            <Name TextId="TOK_TextId_Module_In1of3"/>
+            <InfoText TextId="TOK_InfoTextId_Module_In1of3"/>
+            <HardwareRelease Value="1.0"/>
+            <SoftwareRelease Value="1.0"/>
+          </ModuleInfo>
+          <VirtualSubmoduleList>
+            <VirtualSubmoduleItem ID="11" SubmoduleIdentNumber="0x0001" API="0">
+              <IOData>
+                <Input Consistency="All items consistency">
+                  <DataItem DataType="OctetString" TextId="TOK_Input_DataItem_1of3" Length="24" UseAsBits="true"/>
+                </Input>
+              </IOData>
+              <ModuleInfo>
+                <Name TextId="TOK_TextId_Module_In1of3"/>
+                <InfoText TextId="TOK_InfoTextId_Module_In1of3"/>
+              </ModuleInfo>
+            </VirtualSubmoduleItem>
+          </VirtualSubmoduleList>
+        </ModuleItem>
+        <ModuleItem ID="Input_Module2of3" ModuleIdentNumber="0x00000031">
+          <ModuleInfo>
+            <Name TextId="TOK_TextId_Module_In2of3"/>
+            <InfoText TextId="TOK_InfoTextId_Module_In2of3"/>
+            <HardwareRelease Value="1.0"/>
+            <SoftwareRelease Value="1.0"/>
+          </ModuleInfo>
+          <VirtualSubmoduleList>
+            <VirtualSubmoduleItem ID="12" SubmoduleIdentNumber="0x0001" API="0">
+              <IOData>
+                <Input Consistency="All items consistency">
+                  <DataItem DataType="OctetString" TextId="TOK_Input_DataItem_2of3" Length="168" UseAsBits="true"/>
+                </Input>
+              </IOData>
+              <ModuleInfo>
+                <Name TextId="TOK_TextId_Module_In2of3"/>
+                <InfoText TextId="TOK_InfoTextId_Module_In2of3"/>
+              </ModuleInfo>
+            </VirtualSubmoduleItem>
+          </VirtualSubmoduleList>
+        </ModuleItem>
+        <ModuleItem ID="Input_Module3of3" ModuleIdentNumber="0x00000032">
+          <ModuleInfo>
+            <Name TextId="TOK_TextId_Module_In3of3"/>
+            <InfoText TextId="TOK_InfoTextId_Module_In3of3"/>
+            <HardwareRelease Value="1.0"/>
+            <SoftwareRelease Value="1.0"/>
+          </ModuleInfo>
+          <VirtualSubmoduleList>
+            <VirtualSubmoduleItem ID="13" SubmoduleIdentNumber="0x0001" API="0">
+              <IOData>
+                <Input Consistency="All items consistency">
+                  <DataItem DataType="OctetString" TextId="TOK_Input_DataItem_3of3" Length="200" UseAsBits="true"/>
+                </Input>
+              </IOData>
+              <ModuleInfo>
+                <Name TextId="TOK_TextId_Module_In3of3"/>
+                <InfoText TextId="TOK_InfoTextId_Module_In3of3"/>
+              </ModuleInfo>
+            </VirtualSubmoduleItem>
+          </VirtualSubmoduleList>
+        </ModuleItem>
+        <ModuleItem ID="Output_Module1of3" ModuleIdentNumber="0x00000040">
+          <ModuleInfo>
+            <Name TextId="TOK_TextId_Module_Out1of3"/>
+            <InfoText TextId="TOK_InfoTextId_Module_Out1of3"/>
+            <HardwareRelease Value="1.0"/>
+            <SoftwareRelease Value="1.0"/>
+          </ModuleInfo>
+          <VirtualSubmoduleList>
+            <VirtualSubmoduleItem ID="16" SubmoduleIdentNumber="0x0001" API="0">
+              <IOData>
+                <Output Consistency="All items consistency">
+                  <DataItem DataType="OctetString" TextId="TOK_Output_DataItem_1of3" Length="52" UseAsBits="true"/>
+                </Output>
+              </IOData>
+              <ModuleInfo>
+                <Name TextId="TOK_TextId_Module_Out1of3"/>
+                <InfoText TextId="TOK_InfoTextId_Module_Out1of3"/>
+              </ModuleInfo>
+            </VirtualSubmoduleItem>
+          </VirtualSubmoduleList>
+        </ModuleItem>
+        <ModuleItem ID="Output_Module2of3" ModuleIdentNumber="0x00000041">
+          <ModuleInfo>
+            <Name TextId="TOK_TextId_Module_Out2of3"/>
+            <InfoText TextId="TOK_InfoTextId_Module_Out2of3"/>
+            <HardwareRelease Value="1.0"/>
+            <SoftwareRelease Value="1.0"/>
+          </ModuleInfo>
+          <VirtualSubmoduleList>
+            <VirtualSubmoduleItem ID="17" SubmoduleIdentNumber="0x0001" API="0">
+              <IOData>
+                <Output Consistency="All items consistency">
+                  <DataItem DataType="OctetString" TextId="TOK_Output_DataItem_2of3" Length="252" UseAsBits="true"/>
+                </Output>
+              </IOData>
+              <ModuleInfo>
+                <Name TextId="TOK_TextId_Module_Out2of3"/>
+                <InfoText TextId="TOK_InfoTextId_Module_Out2of3"/>
+              </ModuleInfo>
+            </VirtualSubmoduleItem>
+          </VirtualSubmoduleList>
+        </ModuleItem>
+        <ModuleItem ID="Output_Module3of3" ModuleIdentNumber="0x00000042">
+          <ModuleInfo>
+            <Name TextId="TOK_TextId_Module_Out3of3"/>
+            <InfoText TextId="TOK_InfoTextId_Module_Out3of3"/>
+            <HardwareRelease Value="1.0"/>
+            <SoftwareRelease Value="1.0"/>
+          </ModuleInfo>
+          <VirtualSubmoduleList>
+            <VirtualSubmoduleItem ID="18" SubmoduleIdentNumber="0x0001" API="0">
+              <IOData>
+                <Output Consistency="All items consistency">
+                  <DataItem DataType="OctetString" TextId="TOK_Output_DataItem_3of3" Length="132" UseAsBits="true"/>
+                </Output>
+              </IOData>
+              <ModuleInfo>
+                <Name TextId="TOK_TextId_Module_Out3of3"/>
+                <InfoText TextId="TOK_InfoTextId_Module_Out3of3"/>
+              </ModuleInfo>
+            </VirtualSubmoduleItem>
+          </VirtualSubmoduleList>
+        </ModuleItem>
+      </ModuleList>
+      <ChannelDiagList>
+        <ChannelDiagItem ErrorType="16">
+          <Name TextId="TOK_Name_ErrorType16"/>
+          <Help TextId="TOK_HelpName_ErrorType16"/>
+        </ChannelDiagItem>
+      </ChannelDiagList>
+      <CategoryList>
+        <CategoryItem ID="ID_ERTEC400DEVKit" TextId="TOK_Category_ERTEC400DEVKit"/>
+      </CategoryList>
+      <ExternalTextList>
+        <PrimaryLanguage>
+          <!--english-->
+          <Text TextId="TOK_DevIdent_InfoText" Value="port IO Device Conformance Test 1"/>
+          <Text TextId="port" Value="port"/>
+          <!--DAP - ERTEC 400 Devkit-->
+          <Text TextId="TOK_Category_ERTEC400DEVKit" Value="port IO Device Conformance Test 1"/>
+          <Text TextId="TOK_Standard_no_PDEV" Value="Standard, no PDev"/>
+          <Text TextId="TOK_Standard" Value="Standard"/>
+          <Text TextId="6GK1 953-0CA00" Value="6GK1 953-0CA00"/>
+          <Text TextId="TOK_ModInfo_InfoTextId_DAP1" Value="Mecco ProfiMark"/>
+          <!--port name-->
+          <Text TextId="TOK_Subslot_8000" Value="X1"/>
+          <Text TextId="TOK_Subslot_8001" Value="P1"/>
+          <Text TextId="TOK_DAP_InterfaceModule" Value="Interface"/>
+          <Text TextId="TOK_Port1" Value="RJ45 10/100 MBit/s"/>
+          <!--module name-->
+          <Text TextId="TOK_TextId_Module_In1of3" Value=" Input Block 1 of 3"/>
+          <Text TextId="TOK_TextId_Module_In2of3" Value=" Input Block 2 of 3"/>
+          <Text TextId="TOK_TextId_Module_In3of3" Value=" Input Block 3 of 3"/>
+
+          <Text TextId="TOK_TextId_Module_Out1of3" Value=" Output Block 1 of 3"/>
+          <Text TextId="TOK_TextId_Module_Out2of3" Value=" Output Block 2 of 3"/>
+          <Text TextId="TOK_TextId_Module_Out3of3" Value=" Output Block 3 of 3"/>
+          <!--module info name-->
+          <Text TextId="TOK_InfoTextId_Module_In1of3" Value="Input Data Block 1 of 3 - ModuleIdentNumber:0x30 - SubmoduleIdentNumber:0x0001 - API:0x00"/>
+          <Text TextId="TOK_InfoTextId_Module_In2of3" Value="Input Data Block 2 of 3 - ModuleIdentNumber:0x31 - SubmoduleIdentNumber:0x0001 - API:0x00"/>
+          <Text TextId="TOK_InfoTextId_Module_In3of3" Value="Input Data Block 3 of 3 - ModuleIdentNumber:0x32 - SubmoduleIdentNumber:0x0001 - API:0x00"/>
+
+          <Text TextId="TOK_InfoTextId_Module_Out1of3" Value="Output Data Block 1 of 3 - ModuleIdentNumber:0x40 - SubmoduleIdentNumber:0x0001 - API:0x00"/>
+          <Text TextId="TOK_InfoTextId_Module_Out2of3" Value="Output Data Block 2 of 3 - ModuleIdentNumber:0x41 - SubmoduleIdentNumber:0x0001 - API:0x00"/>
+          <Text TextId="TOK_InfoTextId_Module_Out3of3" Value="Output Data Block 3 of 3 - ModuleIdentNumber:0x42 - SubmoduleIdentNumber:0x0001 - API:0x00"/>
+          <!--dataitem name-->
+          <Text TextId="TOK_Input_DataItem_1of3" Value="Input Block 1 of 3"/>
+          <Text TextId="TOK_Input_DataItem_2of3" Value="Input Block 2 of 3"/>
+          <Text TextId="TOK_Input_DataItem_3of3" Value="Input Block 2 of 3"/>
+
+          <Text TextId="TOK_Output_DataItem_1of3" Value="Output Block 1 of 3"/>
+          <Text TextId="TOK_Output_DataItem_2of3" Value="Output Block 2 of 3"/>
+          <Text TextId="TOK_Output_DataItem_3of3" Value="Output Block 3 of 3"/>
+          <!--errortype name-->
+          <Text TextId="TOK_Name_ErrorType16" Value="parameter assignment error"/>
+          <Text TextId="TOK_HelpName_ErrorType16" Value="parameter assignment error"/>
+        </PrimaryLanguage>
+      </ExternalTextList>
+    </ApplicationProcess>
+  </ProfileBody>
+</ISO15745Profile>

@@ -1,6 +1,10 @@
 # EtherMark by _Mecco_
 **Welcome to the EtherMark GitHub Support Page.**
 
-At Mecco, we strive to provide support for our products in the most accessible way possible. That's why we've set up this support GitHub Page. You will notice that we've provided example ladder logic above, which is available for RSLogix 19-21. If you're using ProfiNet we've included ladder logic for a Siemens S7 PLC, and will be adding to our support materials for further lines as well.
+* **EtherMark Firmwares** folder contains firmware binaries.
+* **EtherMark_Integration_Kit.zip** is for Allen Bradley PLC's and RSLogix 19-21.
+* **ProfiMark-Integration-Kit.zip** and **GSDML** file is for Siemens S7 PLC's and TIA STEP-7.
+* **Tools** folder contains software tools and utilities.
 
-Example Ladder Logic can be found in the Example Ladder Logic folder above for both EtherMark and ProfiMark enabled Laser and Dot Peen Systems. 
+* **Example Ladder Logic** folder contains examples for Allen Bradley PLC's.
+

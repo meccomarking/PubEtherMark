@@ -1,0 +1,130 @@
+#define		VERSION		"2.0.5.6"
+
+/////////////////////////////////////////////////////////////////////////////
+// Version History
+/////////////////////////////////////////////////////////////////////////////
+
+// 2.0.5.6	2018.03.20	Pavel		Add LEC transform timeout (xform) setpoint default=5sec; clean up lec.cpp integration with Eclipse
+// 2.0.5.5	2018.03.15	Pavel		Raise LEC transform timeouts to 5 seconds
+// 2.0.5.4	2018.03.08	Pavel		Enhance T2 dot peen comm retry mechanism
+// 2.0.5.3	2018.03.08	Pavel		New Laser-Cache-Objects setpoint: if true, send LEC cmd "207,1"
+// 2.0.5.2	2018.02.26	Pavel		Prevent reset from LEC Out of Memory error 73;  force log level 7 (to improve LEC Host mode acquisition)
+// 2.0.5.1	2018.02.22	Pavel		Profinet diagnostics; Load Job File emits diagnostic: LEC available RAM
+// 2.0.5.0	2018.02.01	Pavel		Shave 900ms off of the Mark Job Only command 230
+// 2.0.4.9	2017.12.20	Pavel		Improved Profinet string length handling; CLI "PLC ?" lists PLC command set
+// 2.0.4.8	2017.12.15	Pavel		Abort Mark on marking timeout; (Dot-Peen) marker_state = 1 after drop command 0
+// 2.0.4.7	2017.09.07	Pavel		Defend against oversize modbus message - clip left-over-data (to preserve free socket pool)
+// 2.0.4.6	2017.09.06	Pavel		Defend against oversize modbus message
+// 2.0.4.5	2017.09.01	Pavel		Increase Modbus socket pool to 100
+// 2.0.4.4	2017.08.25	Pavel		Fixed Couth XY offset translation
+// 2.0.4.3	2017.08.24	Pavel		Modbus diagnostics
+// 2.0.4.2	2017.06.24	Pavel		Minimized Dot-Peen Load Job File time (cmd 100)
+// 2.0.4.1	2017.06.15	Pavel		Do not require Laser-OK (LEC UserInput1) to be asserted if PLC Command is 220 or 240 (Prepare only)
+// 2.0.4.0	2017.06.13	Pavel		Custom feature for TM-America: fault on non-numeric data in short_field_string (dot-peen only)
+// 2.0.3.9	2017.05.01	Pavel		For Gardner-Denver PLC bug, truncate last T in ".TXTT" job file suffix
+// 2.0.3.8	2017.04.28	Pavel		For Gardner-Denver PLC bug, silence "Short Field String too long" error (clip string length instead)
+// 2.0.3.7	2017.04.24	Pavel		At boot-up, if jumper installed on JP1.15+16, reset IP address to 192.168.1.100
+// 2.0.3.6	2017.04.22	Pavel		Add 150ms delay on start-up, to allow UDP Syslog channel to stabilize (enables UDPTerminal to capture showif output)
+// 2.0.3.5	2017.03.26	Pavel		Revamp Dot-Peen Load Job Cmd 100 sequence, eliminating failures, and speeding it up
+// 2.0.3.4	2017.03.22	Pavel		Change Dot-Peen Load Job timeout 3: 5 ---> 15 sec
+// 2.0.3.3	2017.02.15	Pavel		Add new setpoints: Laser-Load-Job-Timeout, Laser-Set-Text-Timeout
+// 2.0.3.2	2016.11.30	Pavel		Merge 2.0.3.1 with 2.0.3.1x;  Commands 190 and 240, LEC constraints
+// 2.0.3.1	2016.11.29	Pavel		Allow T2 Pause during marking
+// 2.0.3.1x	2016.10.21	Rob			Revised command 240, and constraints based on mark testing
+// 2.0.3.0	2016.10.18	Pavel		Fix broken T2 comms
+// 2.0.2.9	2016.10.15	Pavel		(T2 comms broken) Web interface Config page and telnet device command allows setting Profinet Device Name
+// 2.0.2.8	2016.10.11	Pavel		Add persistence to Profinet (device name); Add profimem telnet cmd; Add telnet TEST2 cmd to test checksum (disabled)
+// 2.0.2.7	2016.09.12	Pavel		Comment out redundant "Marking inhibited" diags.  Fix copy_fw_binary.bat batch file.
+// 2.0.2.7	2016.09.05	Rob			Added command 240 to Reset, Prepare, and Transform job
+// 2.0.2.6	2016.06.30	Pavel		Merge branches A and B, broadcast IP address to UDP port 514 on boot-up
+// 2.0.2.6	2016.06.01	Rob			Branch B: Added LEC pass through command and support for text box constraints
+// 2.0.2.X	2016.05.22	Pavel		Branch A: New boot diagnostics, new telnet command SHOWIF
+// 2.0.2.5	2016.02.09	Pavel		New MECCO logo (on web page)
+// 2.0.2.4	2015.10.25	Pavel		Enhanced diagnostics, Solve T2 Motors-Always-On-PWM comm problem
+// 2.0.2.3	2015.09.22	Pavel		Fix bug in convert class; solves incorrect hex/binary output in LEC diagnostic
+// 2.0.2.2	2015.09.17	Rob			Add additional checks for system error bit and hardware OK bit while laser marking
+// 2.0.2.1	2015.08.14	Pavel		Merge in longer-lec-timeout branch (ver 2.0.1.6); Telnet: fix backspace, ignore square brackets []
+// 2.0.2.0	2015.07.14	Pavel		Allow Couth-T2 to assert Pause status, without aborting marking state
+// 2.0.1.9	2015.06.11	Pavel		Drop LEC Host Mode before rebooting
+// 2.0.1.9	2015.06.09	Pavel		Web UI: Reorganized Diagnostic screen, added LEC Host Mode status, toggle button
+// 2.0.1.8	2015.05.27	Pavel		Web UI: Enhanced Diagnostic screen
+// 2.0.1.7	2015.05.26	Pavel		Web UI User Interface: Index, Configuration, Diagnostic screens
+// 2.0.1.6	2015.04.13	Pavel		Branch "Longer-LEC-Timeout": lec_send_message() sets all (timeouts <= one second) to 3 seconds
+// 2.0.1.5	2015.04.04	Pavel		First Modbus/TCP release - added Modbus config switch and MODbus [on|off] config command
+// 2.0.1.5	2015.03.24	Pavel		First Modbus/TCP pre-release - for in-house testing (O2T struct at address 1000, T2O struct at address 2000)
+// 2.0.1.4	2015.02.23	Pavel		Raise 999 error on any "string too long"
+// 2.0.1.4	2015.02.08	Pavel		Added convert_number class, "convert" telnet command.  Added hex/binary output to "From LEC" diagnostic in lec.cpp
+// 2.0.1.3	2015.01.16	Pavel		Increased Couth marking commence timeout, constrained all string length fields
+// 2.0.0.12	2014.12.22	Pavel		Fixed Couth XY offset translation
+// 2.0.0.11	2014.12.22	Rob			Increased timeout for lec_set_object_text to accommodate bar code generation time
+// 2.0.0.10	2014.12.18	Rob			Implemented usage of flash setpoint LecLoadFromUsb in lec_load_job_file
+// 2.0.0.9	2014.12.15	Pavel		Add flash setpoint LecLoadFromUsb
+// 2.0.0.8	2014.11.13	Pavel		Fix Host Mode command bug
+// 2.0.0.7	2014.09.14	Pavel		Add IP Gateway setpoint, clean up Telnet help listing.
+// 2.0.0.6	2014.08.19	Pavel		Couth XY translate performed at load-job-file time; new Transform Job File command 120
+// 2.0.0.5	2014.08.06	Pavel		New -NULL- token. Fixed Profinet long_field_string 64 char length bug; WIP
+// 2.0.0.4   2014.07.11  Pavel		Merged 2.0.0.3 with Rob's branch 1.1.1.12 (R); added ekg-related, eth commands
+// 1.1.1.12R 2014.06.25  Rob		Revised usage of lec_enable_markable_objects.  This fixes the problem in which multiple
+//									'prepare job file' commands re-enable null text objects.  A null test identifier is now used.
+// 1.1.1.11R 2014.05.27  Rob		Fixed typo in lec_transform_all_objects, when determining that no transform is necessary
+// 1.1.1.10R 2014.05.14  Rob		Added additional calls to RTA_Process in lec_send_message
+// 1.1.1.9R  2014.04.15  Rob		Added heartbeat update to lec_send_message
+// 1.1.1.8R  2014.04.07  Rob		Added command (170) to read LEC IO and update EIP status word
+// 1.1.1.7R  2014.03.19  Rob		Added function to monitor LEC hardware start mark signal to initiate marking
+// 1.1.1.6R  2014.03.18  Rob		Apply transform after job file load only, not when preparing job
+
+// 2.0.0.3  2014.07.11  Pavel		PLC link comm stats (telnet "stat" command), Ethernet speed control ("eth" command)
+// 2.0.0.2  2014.07.09  Pavel		Implement EIP/PN protocol selector, ProfiNet comms down fault
+// 2.0.0.1  2014.06.16  Pavel		Fix Couth T2 Line Parameter command code 0x25 --> 0x26
+// 2.0.0.0  2014.05.01  Pavel		Null-terminate incoming Profinet strings
+// 1.1.1.8  2014.04.24  Pavel		Convert payload to/from Profinet string format
+// 1.1.1.7  2014.04.16  Pavel		Transport Mecco T2O and O2T object model via Profinet IO packets
+
+// 1.1.1.6  2014.02.17 	Pavel		Merge RTA's Profinet with v1.1.1.5.; fix center-of-rotation bug
+// 1.1.1.5  2014.02.06  Pavel		Telnet "comport off", LED outputs for simulator; see release-notes.txt
+// 1.1.1.4  2014.02.04  Rob			Added simulation mode for laser.
+// 1.1.1.3  2014.02.04  Rob			Fixed problem after transform error occurs; All laser jobs closed, requiring reload.
+// 1.1.1.2  2014.01.01  Rob			Added new command 110, load multiple job files.  Added .justify attribute for fields,
+//									and justification for lec fields.  Added new command 230, Mark Only.
+// 1.1.1.1  2013.12.25  Pavel		New Dot Peen command 220: Prepare Job Only
+// 1.1.1.0  2013.12.17  Pavel		Remove FAKE_LEC_USER_INPUT_1, add Telnet command LaserOkCheck
+// 1.1.0.9  2013.12.15  Pavel		Relax Couth marking complete condition; Add FAKE_LEC_USER_INPUT_1 to manage LEC input 1
+// 1.1.0.8  2013.12.12  Pavel		Revamp Couth mark job logic.
+// 1.1.0.7  2013.12.11  Pavel		Merged with Rob's 1.1.0.4 (to Kevin Meyer)
+// 1.1.0.6  2013.12.10  Pavel		Configurable Load Job File delays
+// 1.1.0.5  2013.12.10  Pavel		Revised monitor STatus and CTEST commands
+// 1.1.0.4x 2013.12.09  Pavel		Debugged Couth comms (to Tim Winans)
+// 1.1.0.4  2013.11.29  Rob			Release to Mecco.  Fixed several problems with laser profiles.
+// 1.1.0.3  2013.11.27  Pavel		Improved Couth comm link, telnet logsink, improved diags
+// 1.1.0.2  2013.11.20  Rob			Finish Cognex interface.   Add RC code to error comms error messages.
+// 1.1.0.1  2013.11.12  Pavel		Merge code bases; pursue solving Couth issues (per Scott Industries)
+// 1.1.0.0  2013.11.11  Rob+Pavel	Modified object model for Cognex.  Added checksum and profile functions.
+// 1.0.2.X  2013.10.09  Rob			Add support for Cognex InSight TelNet
+// 1.0.2.1  2013.11.11  Pavel		Work in progress
+// 1.0.2.0  2013.10.30  Pavel		Improved Couth status logic
+// 1.0.1.9  2013.10.26  Pavel		Couth auto-reset on exit from 999 (receipt of 999 command)
+// 1.0.1.8  2013.10.26  Pavel		Couth auto-reset on entry to 999
+// 1.0.1.7  2013.10.09  Rob			Refine LEC transformations
+// 1.0.1.7  2013.10.07  Pavel		Add support for absolute LEC transformations
+// 1.0.1.6  2013.09.27  Rob         Test and refine re-mark code
+// 1.0.1.5	2013.09.25  Pavel+Rob	Merged code 1 (Pre-Cognex, Couth Offset)
+// 1.0.1.4	2013.09.12	Pavel		Couth X Y Translate, fixed ODVA subnet error
+// 1.0.1.3	2013.09.12	Pavel		Henceforth, requires Couth FW 02.17-09 or later
+// 1.0.1.2	2013.09.12	Pavel		Couth "cver" FW version command.
+// 1.0.1.1	2013.08.23	Pavel		Couth comm error throws 999 error
+// 1.0.1	2013.08.21	Pavel		Cleaned up Couth load-job-file (beta released to Scot Industries)
+//
+// 1.0.0	2013.08.01	Pavel		Cleaned up object model representation
+//                              	Couth FILE EXISTS, Mecco's EIP identity, release for ODVA compliance testing
+// 0.9.F	2013.07.31	Pavel		Work in progress
+// 0.9.E	2013.07.29	Rob			Report Host Mode status, Jamin's ODVA conformance
+// 0.9.C	2013.07.18	Pavel		Couth special mark, LEC laser ready input checking
+// 0.9.B	2013.07.17	Pavel		Power-on delay EIP command execution inhibit
+// 0.9.A	2013.07.01	Pavel		Improve Couth error handling
+// 0.9.9	2013.06.29	Pavel		Fix Couth out-of-bounds lock-up bug
+// 0.9.8	2013.06.28	Pavel		Debug Couth interface (limited testing)
+// 0.9.7	2013.06.27	Pavel		Revamp Couth interface to mirror LEC (untested!)
+// 0.9.6	2013.06.26	Rob			LEC integration at Mecco (labeled 0.9.5)
+// 0.9.5	2013.06.19	Pavel 		Post merge
+// 0.9.4	and earlier	Rob			Develop LEC marking state machine in remote_API.cpp/.h
+/////////////////////////////////////////////////////////////////////////////

@@ -1,9 +1,10 @@
-#define		VERSION		"2.0.5.6"
+#define		VERSION		"2.0.5.7"
 
 /////////////////////////////////////////////////////////////////////////////
 // Version History
 /////////////////////////////////////////////////////////////////////////////
 
+// 2.0.5.7	2018.04.25	Pavel		New Telnet ExtStart cmd (for MOTF);  New PLC command 250: Mark With Pause
 // 2.0.5.6	2018.03.20	Pavel		Add LEC transform timeout (xform) setpoint default=5sec; clean up lec.cpp integration with Eclipse
 // 2.0.5.5	2018.03.15	Pavel		Raise LEC transform timeouts to 5 seconds
 // 2.0.5.4	2018.03.08	Pavel		Enhance T2 dot peen comm retry mechanism

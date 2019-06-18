@@ -1,9 +1,19 @@
-#define		VERSION		"2.0.5.8"
+#define		VERSION		"2.0.6.4"
+
 
 /////////////////////////////////////////////////////////////////////////////
 // Version History
 /////////////////////////////////////////////////////////////////////////////
 
+// 2.0.6.4	2019.06.14  Pavel		Updated default IP setpoints: UDP-Log-Address=192.168.4.2
+//									Telnet "out." commands to get/set short field strings, job file name; compacted "out" output
+//									Config web page: hid Profinet device-name when EIP, removed Cognex IP setpoint
+//									Merge Rob's custom for Borg Warner: enforce 17 char short field strings 1 & 2
+// 2.0.6.3	2019.01.24	Pavel		Debugging Profinet wlanID: pn_crtdata.c // pavel 20190124
+// 2.0.6.2	2018.12.17	Pavel		Increased initial Dot Peen Load Job File timeout from 2 seconds to 3
+// 2.0.6.1	2018.10.15	Pavel		Byte-swapping for endian conversion: Telnet swap command
+// 2.0.6.0	2018.09.22	Pavel		Inhibit Diagnostic web page from polling LEC I/O (cmd 31), when marking or loading/manipulating job
+// 2.0.5.9	2018.07.27	Pavel		Enhanced Profinet diags;  Laser: fixed PLC cmd 230 (Mark Job Only) (times out waiting for StartMark)
 // 2.0.5.8	2018.05.04	Pavel		Fixed new PLC cmd 250: Mark With Pause: skip loading text if T2 is already paused
 // 2.0.5.7	2018.04.25	Pavel		New Telnet ExtStart cmd (for MOTF);  New PLC command 250: Mark With Pause
 // 2.0.5.6	2018.03.20	Pavel		Add LEC transform timeout (xform) setpoint default=5sec; clean up lec.cpp integration with Eclipse

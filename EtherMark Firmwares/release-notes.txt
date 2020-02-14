@@ -1,10 +1,14 @@
-#define		VERSION		"2.0.6.4"
+#define		VERSION		"2.0.6.8"
 
 
 /////////////////////////////////////////////////////////////////////////////
 // Version History
 /////////////////////////////////////////////////////////////////////////////
 
+// 2.0.6.8	2020.02.13 	Pavel		Extend DOt Peen Load Job timeout from 3 to 6 seconds
+// 2.0.6.7	2019.12.05 	Pavel		WIP: Extend Laser Profile cmd 150 to support LEC Platform 6; Allow unique attribute to function with cmd 220 (Prepare Only)
+// 2.0.6.6	2019.08.03 	Pavel		Extend LEC ExecutejobOnce (207) timeout to 10 seconds.  Add binary output to swap cmd
+// 2.0.6.5	2019.07.06 	Pavel		Fixed LEC host mode acquisition when (log-level < 6);  log-level not forced to 6 on boot;  ping command
 // 2.0.6.4	2019.06.14  Pavel		Updated default IP setpoints: UDP-Log-Address=192.168.4.2
 //									Telnet "out." commands to get/set short field strings, job file name; compacted "out" output
 //									Config web page: hid Profinet device-name when EIP, removed Cognex IP setpoint

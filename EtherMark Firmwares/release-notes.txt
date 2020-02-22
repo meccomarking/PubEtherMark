@@ -1,10 +1,11 @@
-#define		VERSION		"2.0.6.8"
+#define		VERSION		"2.0.6.9"
 
 
 /////////////////////////////////////////////////////////////////////////////
 // Version History
 /////////////////////////////////////////////////////////////////////////////
 
+// 2.0.6.9	2020.02.22 	Pavel		Solved intermittent (1:50) Dot-Peen T2 Load Job (cmd 100) failure
 // 2.0.6.8	2020.02.13 	Pavel		Extend DOt Peen Load Job timeout from 3 to 6 seconds
 // 2.0.6.7	2019.12.05 	Pavel		WIP: Extend Laser Profile cmd 150 to support LEC Platform 6; Allow unique attribute to function with cmd 220 (Prepare Only)
 // 2.0.6.6	2019.08.03 	Pavel		Extend LEC ExecutejobOnce (207) timeout to 10 seconds.  Add binary output to swap cmd

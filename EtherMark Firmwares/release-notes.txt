@@ -1,10 +1,12 @@
-#define		VERSION		"2.0.7.1"
+#define		VERSION		"2.0.7.3"
 
 
 /////////////////////////////////////////////////////////////////////////////
 // Version History
 /////////////////////////////////////////////////////////////////////////////
 
+// 2.0.7.3	2020.05.07 	Pavel		Laser: Apply Laser Profile cmd 150 no longer sends cmd 121 to Platform 6 LEC
+// 2.0.7.2	2020.05.07 	Pavel		Dot-Peen: Nack on FileExistsCheck (101) informs 999 error msg
 // 2.0.7.1	2020.02.25 	Pavel		Make T2 Comm Start Grace Time a setpoint (on Config web page); defaults to 8 sec
 // 2.0.7.0	2020.02.25 	Pavel		On start-up, enforce 5 second grace time before T2 comms start
 // 2.0.6.9	2020.02.22 	Pavel		Solved intermittent (1:50) Dot-Peen T2 Load Job (cmd 100) failure

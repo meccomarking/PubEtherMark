@@ -1,10 +1,11 @@
-#define		VERSION		"2.0.7.3"
+#define		VERSION		"2.0.7.4"
 
 
 /////////////////////////////////////////////////////////////////////////////
 // Version History
 /////////////////////////////////////////////////////////////////////////////
 
+// 2.0.7.4	2020.05.28 	Pavel		New Telnet cmds: SETPROFIMEM, ERASEPROFIMEM (fixes broken Profinet device name)
 // 2.0.7.3	2020.05.07 	Pavel		Laser: Apply Laser Profile cmd 150 no longer sends cmd 121 to Platform 6 LEC
 // 2.0.7.2	2020.05.07 	Pavel		Dot-Peen: Nack on FileExistsCheck (101) informs 999 error msg
 // 2.0.7.1	2020.02.25 	Pavel		Make T2 Comm Start Grace Time a setpoint (on Config web page); defaults to 8 sec

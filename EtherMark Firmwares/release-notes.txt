@@ -1,10 +1,12 @@
-#define		VERSION		"2.0.7.4"
+#define		VERSION		"2.0.7.6"
 
 
 /////////////////////////////////////////////////////////////////////////////
 // Version History
 /////////////////////////////////////////////////////////////////////////////
 
+// 2.0.7.6	2020.07.08	Pavel		Allow commas in field string; error: "Improper response to object text inquiry" in lec_get_object_text()
+// 2.0.7.5	2020.06.12	Pavel		Add 12,13,14,15 to Couth T2 error table
 // 2.0.7.4	2020.05.28 	Pavel		New Telnet cmds: SETPROFIMEM, ERASEPROFIMEM (fixes broken Profinet device name)
 // 2.0.7.3	2020.05.07 	Pavel		Laser: Apply Laser Profile cmd 150 no longer sends cmd 121 to Platform 6 LEC
 // 2.0.7.2	2020.05.07 	Pavel		Dot-Peen: Nack on FileExistsCheck (101) informs 999 error msg

@@ -1,10 +1,14 @@
-#define		VERSION		"2.0.7.6"
+#define		VERSION		"2.0.8.0"
 
 
 /////////////////////////////////////////////////////////////////////////////
 // Version History
 /////////////////////////////////////////////////////////////////////////////
 
+// 2.0.8.0	2020.12.22	Pavel		Dot Peen jobfile ".txt" suffix is optional.  Jobfile sent to T2/SmartBox omits the suffix (SmartBox doesn't allow it)
+// 2.0.7.9	2020.10.20	Pavel		Dot Peen marking now employs start_without_answer, to avoid Status poll collision with mark reply
+// 2.0.7.8	2020.10.08	Pavel		W.I.P. Expose setpoint for Couth status polling frequency (at telnet cmd line, and config web page)
+// 2.0.7.7	2020.07.13	Pavel		Debug commas in field string: telnet cmd test1
 // 2.0.7.6	2020.07.08	Pavel		Allow commas in field string; error: "Improper response to object text inquiry" in lec_get_object_text()
 // 2.0.7.5	2020.06.12	Pavel		Add 12,13,14,15 to Couth T2 error table
 // 2.0.7.4	2020.05.28 	Pavel		New Telnet cmds: SETPROFIMEM, ERASEPROFIMEM (fixes broken Profinet device name)
